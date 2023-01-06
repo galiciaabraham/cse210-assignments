@@ -1,3 +1,7 @@
+//Author: Abraham Galicia. 
+//Class: CSE210.
+//Assignment: James Bond Prep 1.
+
 using System;
 
 class Program
@@ -8,8 +12,9 @@ class Program
         string first_name = Console.ReadLine();
         Console.Write("WHat is your last name? ");
         string last_name = Console.ReadLine();
+        Console.WriteLine("");
+        Console.Write($"Your name is {last_name}, {first_name} {last_name}.");
 
         
-
     }
 }
