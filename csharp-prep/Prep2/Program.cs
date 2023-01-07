@@ -34,6 +34,39 @@ class Program
             letter = "F";
         }
 
+        string simbol = "";
+
+        int secondValue = grade % 10;
+
+        if (secondValue >= 7)
+        {
+            simbol = "+";
+
+        }
+
+        else if (secondValue < 3)
+        {
+            simbol = "-";
+        }
+
+        else
+        {
+            simbol = "";
+        }
+
+        if (grade >= 93)
+        {
+            simbol = "";
+        }
+
+        if (letter == "F")
+        {
+            simbol = "";
+        }
+
+        Console.WriteLine("");
+        Console.Write($"Your grade is {letter}{simbol}");
+
         if (grade >= 70)
         {
             Console.WriteLine("");
@@ -45,8 +78,6 @@ class Program
             Console.WriteLine("");
             Console.Write("Unfortunately you did't pass...Learn from your mistakes and don't give up!");
         }
-
-        Console.Write($"Your grade is {letter}");
         
     }
         
