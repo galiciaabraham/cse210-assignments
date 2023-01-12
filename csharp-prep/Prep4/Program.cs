@@ -17,5 +17,19 @@ class Program
 
         } while (userNumber != 0);
 
+        int sum = 0;
+
+        foreach (int number in numbers){
+            sum = sum + number;
+        }
+
+        int listCount = numbers.Count;
+        float average = sum / listCount;
+        int max = numbers.Max();
+
+        Console.WriteLine($"The total sum of your numbers is {sum}");
+        Console.WriteLine($"The average is {average}");
+        Console.WriteLine($"The max number is {max}");
+
     }
 }
