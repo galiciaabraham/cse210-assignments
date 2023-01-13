@@ -6,6 +6,7 @@ class Program
     {
         DisplayWelcome();
         string UserNameInMain = PromptUserName();
+        int UserNumberInMain = PromtUserNumber();
         
     }
 
@@ -17,5 +18,13 @@ class Program
         Console.WriteLine("Please enter your name: ");
         string UserName = Console.ReadLine();
         return UserName;
+    }
+
+    static int PromtUserNumber(){
+        Console.WriteLine("Please enter your favorite number: ");
+        string UserNumberInString = Console.ReadLine();
+        int UserNumber = int.Parse(UserNumberInString);
+
+        return UserNumber;
     }
 }
