@@ -8,6 +8,7 @@ class Program
         string UserNameInMain = PromptUserName();
         int UserNumberInMain = PromtUserNumber();
         int SquaredNumberInMain = SquareNumber(UserNumberInMain, UserNumberInMain);
+        DisplayResult(UserNameInMain, SquaredNumberInMain);
     }
 
     static void DisplayWelcome(){
@@ -15,13 +16,13 @@ class Program
     }
 
     static string PromptUserName(){
-        Console.WriteLine("Please enter your name: ");
+        Console.Write("Please enter your name: ");
         string UserName = Console.ReadLine();
         return UserName;
     }
 
     static int PromtUserNumber(){
-        Console.WriteLine("Please enter your favorite number: ");
+        Console.Write("Please enter your favorite number: ");
         string UserNumberInString = Console.ReadLine();
         int UserNumber = int.Parse(UserNumberInString);
 
@@ -31,6 +32,10 @@ class Program
     static int SquareNumber(int first, int second){ 
         int SquaredNumberInFunction = first * second;
         return SquaredNumberInFunction;
+    }
+
+    static void DisplayResult(string UserName, int NumberSquared){
+        Console.Write($"All right {UserName}, the square of your number is {NumberSquared}");
     }
 
 }
