@@ -7,7 +7,7 @@ class Program
         DisplayWelcome();
         string UserNameInMain = PromptUserName();
         int UserNumberInMain = PromtUserNumber();
-        
+        int SquaredNumberInMain = SquareNumber(UserNumberInMain, UserNumberInMain);
     }
 
     static void DisplayWelcome(){
@@ -27,4 +27,10 @@ class Program
 
         return UserNumber;
     }
+
+    static int SquareNumber(int first, int second){ 
+        int SquaredNumberInFunction = first * second;
+        return SquaredNumberInFunction;
+    }
+
 }
