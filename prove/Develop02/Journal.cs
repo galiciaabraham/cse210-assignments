@@ -1,27 +1,25 @@
 /* Responsibility: To display through all the entries in the selected Journal file. */
 using System;
+using System.IO;
 
 public class Journal{
-
-    public List<Entry> _journal;
 
     public string _selectedJournal;
 
     public string _availableJournals;
 
-    public List<Entry> GetEntries(){
-        return null;
-    }
-
     public string GetJournalName(){
-        return null;
+        return _selectedJournal = Console.ReadLine();
     }
 
-    public void Display(){
-
-    }
-
-    public void SaveFile(){
-        
+    public void GetEntries(){
+        string fileName = _selectedJournal;
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach (string line in lines)
+        {
+            string[] parts = line.Split(",");
+            Console.WriteLine(line);
+        }
+         
     }
 }

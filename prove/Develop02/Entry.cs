@@ -33,15 +33,11 @@ public class Entry {
     }
 
     public void SaveEntry(){
-        Console.Write(_date);
-        FormatInput();
-        Console.WriteLine(_formatedInput);
-        /*
         using (StreamWriter outputFile = new StreamWriter(_fileName)){
         outputFile.WriteLine(_date);
         outputFile.WriteLine($"{_formatedInput}");
         }
-        */
+    
     }
 
 }
