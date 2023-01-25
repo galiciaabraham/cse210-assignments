@@ -9,5 +9,12 @@ class Program
 
         prompts.Display();
 
+        Entry entry1 = new Entry ();
+
+        entry1.GetDate();
+        entry1.GetInput();
+        entry1.SaveEntry();
+
+
     }
 }
