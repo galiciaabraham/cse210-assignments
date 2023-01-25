@@ -3,15 +3,18 @@ using System;
 
 public class Prompt{
 
-    public List<Entry> _prompts;
+    public List<string> _prompts;
 
     public string _selectedPrompt;
 
     public string GetRandomPrompt(){
-        return null;
+        var random = new Random();
+        int index = random.Next(_prompts.Count);
+        _selectedPrompt = _prompts[index];
+        return _selectedPrompt;
     }
 
     public void Display(){
-        
+        Console.WriteLine($"{GetRandomPrompt()}");
     }
 }
