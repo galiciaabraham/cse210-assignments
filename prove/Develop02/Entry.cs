@@ -7,8 +7,9 @@ public class Entry {
     public string _input;
     public string _date;
     public string _formatedInput;
-
     public string _finalEntry;
+
+
 
     public string GetInput(){
         Console.Write(">");
@@ -30,7 +31,7 @@ public class Entry {
             }
             return $"{input[0].ToString().ToUpper()}{input.Substring(1)}";
         }
-        
+
         _formatedInput = TrimInput(_input);
         _formatedInput = ConverToUpper(_input);
         return _formatedInput;

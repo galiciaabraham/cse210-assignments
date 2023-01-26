@@ -20,10 +20,12 @@ public class Journal{
         }
          
     }
-    public void SaveEntry(string temporalEntry, string journal){
-        using (StreamWriter outputFile = new StreamWriter(journal)){
-        outputFile.WriteLine(temporalEntry);
+    public void SaveEntry(List<string> tempEntries, string journal){
+        using(StreamWriter outputFile = new StreamWriter(journal))
+        foreach(string line in tempEntries){
+            {
+            outputFile.WriteLine(line);
         }
-    
+        }
     }
 }

@@ -16,12 +16,16 @@ public class Menu {
         return _choise = Console.ReadLine();
     }
 
+
     public void MasterFunction(){
         string choise = _choise;
+        List<string> tempEntries = new List<string>{};
+
         do {
             Prompt prompts = new Prompt ();
             Entry entry1 = new Entry ();
-            Journal journals = new Journal ();
+            Journal journals = new Journal ();;
+
 
             GetChoise();
             choise = _choise;
@@ -36,16 +40,19 @@ public class Menu {
                 prompt = prompts._selectedPrompt;
                 prompt = prompts.GetRandomPrompt();
                 prompts.Display();
+
                 tempString = entry1.GetInput();
                 entry1.GetDate();
                 entry1.FormatInput();
-                entry1.SaveTemporalEntry(prompt);
+                tempString = entry1.SaveTemporalEntry(prompt);
+                tempEntries.Add(tempString);
             }
 
             else if (choise == "2"){
-                Console.WriteLine(tempString);
-                Console.WriteLine(displayStringTest);
-
+                foreach(string line in tempEntries){
+                Console.WriteLine(line);
+                Console.WriteLine("");
+                }
             }
 
             else if (choise == "3"){
@@ -56,7 +63,10 @@ public class Menu {
             else if (choise == "4"){
                 saveFileName = journals.GetJournalName();
                 if (saveFileName == newFileName){
-                    journals.SaveEntry(tempString, saveFileName); 
+                    journals.SaveEntry(tempEntries, newFileName); 
+                }
+                else if(saveFileName != newFileName){
+                    journals.SaveEntry(tempEntries, saveFileName);
                 }
       
             }
