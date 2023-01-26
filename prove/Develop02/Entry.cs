@@ -8,7 +8,10 @@ public class Entry {
     public string _date;
     public string _formatedInput;
 
+    public string _finalEntry;
+
     public string GetInput(){
+        Console.Write(">");
         return _input = Console.ReadLine();
     }
     public string GetDate(){
@@ -27,17 +30,14 @@ public class Entry {
             }
             return $"{input[0].ToString().ToUpper()}{input.Substring(1)}";
         }
+        
         _formatedInput = TrimInput(_input);
         _formatedInput = ConverToUpper(_input);
         return _formatedInput;
     }
 
-    public void SaveEntry(){
-        using (StreamWriter outputFile = new StreamWriter(_fileName)){
-        outputFile.WriteLine(_date);
-        outputFile.WriteLine($"{_formatedInput}");
+    public string SaveTemporalEntry(string prompt){
+        return _finalEntry = $"{_date} -- Prompt:{prompt} -- {_formatedInput}";
         }
     
-    }
-
 }

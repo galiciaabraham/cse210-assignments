@@ -15,6 +15,6 @@ public class Prompt{
     }
 
     public void Display(){
-        Console.WriteLine($"{GetRandomPrompt()}");
+        Console.WriteLine($"{_selectedPrompt}");
     }
 }

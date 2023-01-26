@@ -6,8 +6,6 @@ public class Journal{
 
     public string _selectedJournal;
 
-    public string _availableJournals;
-
     public string GetJournalName(){
         return _selectedJournal = Console.ReadLine();
     }
@@ -21,5 +19,11 @@ public class Journal{
             Console.WriteLine(line);
         }
          
+    }
+    public void SaveEntry(string temporalEntry, string journal){
+        using (StreamWriter outputFile = new StreamWriter(journal)){
+        outputFile.WriteLine(temporalEntry);
+        }
+    
     }
 }
