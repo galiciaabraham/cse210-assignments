@@ -6,7 +6,9 @@ public class Journal{
 
     public string _selectedJournal;
 
+
     public string GetJournalName(){
+        /*Purpose: To get the user input to get the selected journal*/
         return _selectedJournal = Console.ReadLine();
     }
 
