@@ -18,6 +18,7 @@ public class Menu {
 
 
     public void MasterFunction(){
+        Login login = new Login();
         Prompt prompts = new Prompt ();
         Entry entry1 = new Entry ();
         Journal journals = new Journal ();
@@ -49,8 +50,16 @@ public class Menu {
             }
 
             else if (_choise == "3"){
+                Console.Write("Please enter the file name: ");
                 journals.GetJournalName();
-                journals.GetEntries();
+                login.VerifyPIN();
+                if(login._pass == true){
+                    journals.GetEntries();
+                }
+                else{
+                    Console.WriteLine("Wrong PIN! Please try again...");
+                    _choise = "3";
+                };
             }
 
             else if (_choise == "4"){
