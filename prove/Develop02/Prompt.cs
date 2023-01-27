@@ -7,11 +7,10 @@ public class Prompt{
 
     public string _selectedPrompt;
 
-    public string GetRandomPrompt(){
+    public void GetRandomPrompt(){
         var random = new Random();
         int index = random.Next(_prompts.Count);
         _selectedPrompt = _prompts[index];
-        return _selectedPrompt;
     }
 
     public void Display(){

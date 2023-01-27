@@ -3,7 +3,7 @@ using System;
 using System.IO;
 public class Entry {
 
-    public string _fileName;
+    public List<string> _temporalEntries;
     public string _input;
     public string _date;
     public string _formatedInput;
@@ -20,25 +20,27 @@ public class Entry {
         return _date = theCurrentTime.ToString("dd/MM/yyy HH:mm:ss");
     }
     public string FormatInput(){
-        string TrimInput(string input){
-            string trimmed = input.Trim(); 
+        string TrimInput(){
+            string trimmed = _input.Trim(); 
             return trimmed;
         }
-        string ConverToUpper(string input){
-            if (string.IsNullOrEmpty(input))
+        string ConverToUpper(string trimmed){
+            if (string.IsNullOrEmpty(trimmed))
             {
                 return string.Empty;
             }
-            return $"{input[0].ToString().ToUpper()}{input.Substring(1)}";
+            return $"{trimmed[0].ToString().ToUpper()}{trimmed.Substring(1)}";
         }
 
-        _formatedInput = TrimInput(_input);
+        _formatedInput = TrimInput();
         _formatedInput = ConverToUpper(_input);
         return _formatedInput;
     }
 
-    public string SaveTemporalEntry(string prompt){
-        return _finalEntry = $"{_date} -- Prompt:{prompt} -- {_formatedInput}";
+    public void SaveTemporalEntry(string prompt){
+        FormatInput();
+        GetDate();
+        _finalEntry = $"{_date} -- Prompt:{prompt} -- {_formatedInput}";
         }
     
 }
