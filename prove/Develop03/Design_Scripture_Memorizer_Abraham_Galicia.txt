@@ -1,0 +1,33 @@
+What does the program do?
+Help people memorize a scripture by erasing words from the complete quotation.For that:
+	-It stores a scripture (both reference and text => This could be a key and value pair)
+	-It displays the scripture.
+	-If the user presses the "Enter" key it will hide a word from the text by clearing the console and reprinting the text with the missing words.
+	-The program will continue to prompt the user to press enter and disappear more and more words until the whole text is gone.
+
+What user inputs does it have?
+It only checks if the user entered the "Enter" key, in other words, nothing, or the keyword "quit" to end the program. (=> As a Stretch challenge I could give the user the option to enter the scripture themselves).
+ 
+What output does it produce?
+It will output a string of text that will be changing as the program moves on, probably an instantiation of the full string that adapts as words disappear without affecting the original full string. 
+How does the program end?
+With the user typing the keyword "quit" on the console or running out of missing words.
+
+Classes:
+
+Main()=> We know what Main does :)
+
+Menu() => Responsibility to display the options the user will have when starting the program and to loop until we've run out of words to disappear.
+
+Scripture()=> Responsibility: to store the chosen scripture and its versions when words have disappeared. 
+
+Word() => Responsibility: to store the randomly chosen word that will be hidden.
+
+Reference()=> Responsibility: to store the reference of the chosen scripture to display it.
+
+Trivia() =>Responsibility to ask for the reference (exactly as it should be written meaning this format "book chapter:verses-verses) for extra learning.
+
+*Stretch challenge*
+I'll include a list of scriptures that will be randomly chosen. I could include a little trivia game that would prompt the user to guess the reference before starting dissapearing the words. 
+
+
