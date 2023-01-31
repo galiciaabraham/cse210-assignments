@@ -14,7 +14,7 @@ public class Fraction{
     public Fraction(int top){
 
         _top = top;
-        _bottom = 5;
+        _bottom = 1;
     }
     public Fraction(int top, int bottom){
         
@@ -37,11 +37,14 @@ public class Fraction{
     public void SetBottom(int bottom){
         _bottom = bottom;
     }
-    
+
     public string GetFractionString(){
         string numerator = _top.ToString();
         string denominator = _bottom.ToString();
         return $" {numerator}/{denominator}";
     }
 
+    public double GetDecimalValue(){
+        return(double) _top/ (double)_bottom;
+    }
 }

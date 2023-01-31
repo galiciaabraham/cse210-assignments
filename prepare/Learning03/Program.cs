@@ -8,17 +8,26 @@ class Program
         Fraction newFraction = new Fraction();
         Console.WriteLine(newFraction.GetTop());
         Console.WriteLine(newFraction.GetBottom());
-        newFraction.SetBottom(15);
-        newFraction.SetTop(4);
-        Console.WriteLine(newFraction.GetTop());
-        Console.WriteLine(newFraction.GetBottom());
+        Console.WriteLine(newFraction.GetFractionString
+        ());
+        Console.WriteLine(newFraction.GetDecimalValue());
 
-        
+        newFraction.SetBottom(4);
+        newFraction.SetTop(15);
+        Console.WriteLine(newFraction.GetFractionString());
+        Console.WriteLine(newFraction.GetDecimalValue());
 
-        Fraction newFraction2 = new Fraction(6);
-        Console.WriteLine();
 
-        Fraction newFraction3 = new Fraction(7,6);
-        Console.WriteLine();
+        Fraction newFraction2 = new Fraction(5);
+        Console.WriteLine(newFraction2.GetFractionString());
+        Console.WriteLine(newFraction2.GetDecimalValue());
+
+        Fraction newFraction3 = new Fraction(3,4);
+        Console.WriteLine(newFraction3.GetFractionString());
+        Console.WriteLine(newFraction3.GetDecimalValue());
+
+        Fraction newFraction4 = new Fraction(1,3);
+        Console.WriteLine(newFraction4.GetFractionString());
+        Console.WriteLine(newFraction4.GetDecimalValue());
     }
 }
