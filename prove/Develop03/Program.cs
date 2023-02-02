@@ -4,6 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        
+        Menu menu = new Menu();
+        Scripture scripture = new Scripture();
+        do{
+        scripture.PickRandomScripture();
+        menu.Display();
+        menu.Input();
+
+
+
+        } while(menu._quit != "quit");
     }
 }
