@@ -5,11 +5,19 @@ public class Word {
 
     public string _word;
 
+    public string _hiddenWord;
     private List<string> _hiddenWords;
+
+    public List<string> _listOfWords;
+
 
     private int _wordCount;
 
 
+    public Word(List<string>listofWords){
+        _word = "";
+        _listOfWords = listofWords;
+    }
     public Word(string word){
         _word = word;
 
@@ -32,12 +40,33 @@ public class Word {
         //ToDo: For now this function is pretty much doing anything but my idea is to make the program stop once the count matches the number of words in the scripture.
     }
 
-    public  void PickRandomWord(List<string>listOfWords){
+    public  void PickRandomWord(){
         var random = new Random();
-       int index = random.Next(listOfWords.Count);
+       int index = random.Next(_listOfWords.Count);
 
-        _word = listOfWords[index];
+        _word = _listOfWords[index];
     }
+
+    public string HideWord(){
+        foreach(char letter in _word){
+            _hiddenWord += "_";
+        }
+        return _hiddenWord;
+    }
+
+    public string ReturnHidenScripture(){
+        return "a new list of strings that will match the chosen word with the string of _____";
+    }
+
+    public void HideAndBuild(){
+        HideWord();
+        ReturnHidenScripture();
+    }
+
+    public void DisplayNewScripture(){
+        Console.WriteLine("New scripture with hidden words");
+    }
+
 
     
 

@@ -8,7 +8,11 @@ class Program
         Menu menu = new Menu();
         Scripture scripture = new Scripture();
         do{
-        scripture.PickRandomScripture();
+        scripture.SplitScripture();
+        Word word = new Word(scripture._wordByWord);
+        word.PickRandomWord();
+        Console.Write(word._word);
+        Console.Write(word.HideWord());
         menu.Display();
         menu.Input();
 

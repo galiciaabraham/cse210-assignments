@@ -3,7 +3,7 @@ using System.Linq;
 
 public class Scripture{
 
-    private string _scripture;
+    private static string _scripture;
 
     public List<string> _wordByWord;
 
@@ -20,15 +20,15 @@ public class Scripture{
         return _scripture;
     }
 
-    public void SplitScripture(){
-        _wordByWord =  _scripture.Split(' ').ToList();
-    }
-
     public void  PickRandomScripture(){
         var random = new Random();
        int index = random.Next(_scriptures.Count);
 
         _scripture = _scriptures[index];
+    }
+    public void SplitScripture(){
+        PickRandomScripture();
+        _wordByWord =  _scripture.Split(' ').ToList();
     }
 
 }
