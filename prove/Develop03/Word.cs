@@ -50,6 +50,7 @@ public class Word {
     }
 
     public void HideWord(){
+        _hiddenWord = "";
         foreach(char letter in _word){
             _hiddenWord += "_";
         }
@@ -63,20 +64,25 @@ public class Word {
 
     public void HideAndBuild(){
         int HiddenIndex = PickRandomWord();
-        if(_hiddenWords.Contains(_chosenIndex)){
+        do{
             HiddenIndex = PickRandomWord();
-        }else {
+        }while(_hiddenWords.Contains(_chosenIndex));
         HideWord();
         ReturnHiddenScripture(HiddenIndex);
-        }
     }
 
-    public void DisplayNewScripture(){
+    public string DisplayNewScripture(){
+        if(CountHiddenWords() != _listOfWords.Count){
         HideAndBuild();
         CountHiddenWords();
         string joint = " ";
         string displayedScripture = String.Join(joint, _listOfWords);
         Console.WriteLine(displayedScripture);
+        return "";
+        } else {
+            return "quit";
+        };
+    
     }
 
 
