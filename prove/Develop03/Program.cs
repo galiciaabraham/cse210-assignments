@@ -15,6 +15,6 @@ class Program
         menu.Display();
         menu.Input();
         word.DisplayNewScripture();
-        } while(menu._quit != "quit");
+        } while(menu._quit != "quit" || word.CountHiddenWords() != word._listOfWords.Count);
     }
 }
