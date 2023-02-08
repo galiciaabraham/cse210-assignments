@@ -3,20 +3,22 @@ using System.Collections.Generic;
 
 public class Word {
 
-    public string _word;
+    private string _word;
 
     public string _hiddenWord;
-    private List<string> _hiddenWords;
+    public List<string> _hiddenWords = new List<string>{};
 
     public List<string> _listOfWords;
 
-
     private int _wordCount;
 
-
-    public Word(List<string>listofWords){
+    public Word(){
+        Scripture scripture = new Scripture();
+        scripture.PickRandomScripture();
+        scripture.SplitScripture();
         _word = "";
-        _listOfWords = listofWords;
+        _listOfWords = scripture._wordByWord;
+
     }
     public Word(string word){
         _word = word;
@@ -30,41 +32,46 @@ public class Word {
     }
 
     public int CountHiddenWords(){
-        int i=0;
         int count = 0;
-        for (i = 0; i < _wordCount; i+= i){
-            count += i;
-        }
+            count += _hiddenWords.Count;
         return count;
 
-        //ToDo: For now this function is pretty much doing anything but my idea is to make the program stop once the count matches the number of words in the scripture.
-    }
+        }
 
-    public  void PickRandomWord(){
+//ToDo: For now this function is pretty much doing anything but my idea is to make the program stop once the count matches the number of words in the scripture.
+
+    public  int PickRandomWord(){
+//Set an if condition to check wether the word has been selected before or not. if it has then pick another one!
         var random = new Random();
        int index = random.Next(_listOfWords.Count);
 
         _word = _listOfWords[index];
+        return index;
     }
 
-    public string HideWord(){
+    public void HideWord(){
         foreach(char letter in _word){
             _hiddenWord += "_";
         }
-        return _hiddenWord;
+        _hiddenWords.Add(_word);
     }
 
-    public string ReturnHidenScripture(){
-        return "a new list of strings that will match the chosen word with the string of _____";
+    public void ReturnHiddenScripture(int index){
+        _listOfWords[index] = _hiddenWord;
+
     }
 
     public void HideAndBuild(){
+        int HiddenIndex = PickRandomWord();
         HideWord();
-        ReturnHidenScripture();
+        ReturnHiddenScripture(HiddenIndex);
     }
 
     public void DisplayNewScripture(){
-        Console.WriteLine("New scripture with hidden words");
+        HideAndBuild();
+        string joint = " ";
+        string displayedScripture = String.Join(joint, _listOfWords);
+        Console.WriteLine(displayedScripture);
     }
 
 
