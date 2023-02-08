@@ -28,6 +28,6 @@ Reference()=> Responsibility: to store the reference of the chosen scripture to 
 Trivia() =>Responsibility to ask for the reference (exactly as it should be written meaning this format "book chapter:verses-verses) for extra learning.
 
 *Stretch challenge*
-I'll include a list of scriptures that will be randomly chosen. I could include a little trivia game that would prompt the user to guess the reference before starting dissapearing the words. 
+I'll include a list of scriptures that will be randomly chosen. I could include a little trivia game that would prompt the user to guess the reference before starting disappearing the words. 
 
 

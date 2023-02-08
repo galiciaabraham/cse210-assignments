@@ -9,8 +9,11 @@ public class Scripture{
 
     private List<string> _scriptures;
 
+    private int _scriptureLenght;
+
     public Scripture(){
-        _scriptures = new List<string>{"Jesus Wept", "Remember lots Wife","Adam fell that men might be; and men are, that they might have joy."};
+        _scriptures = new List<string>{"The Natural Man is an Enemy of God", "Remember lots Wife","Adam fell that men might be; and men are, that they might have joy.","For God so loveth the world that gaveth his son so the world can be saved"};
+
     }
     public Scripture(List<string>scriptures){
         _scriptures = scriptures;
@@ -27,7 +30,6 @@ public class Scripture{
         _scripture = _scriptures[index];
     }
     public void SplitScripture(){
-        PickRandomScripture();
         _wordByWord =  _scripture.Split(' ').ToList();
     }
 

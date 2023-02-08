@@ -6,18 +6,15 @@ class Program
     {
         
         Menu menu = new Menu();
-        Scripture scripture = new Scripture();
+        Word word = new Word();
+        foreach(string element in word._listOfWords){
+            Console.WriteLine(element);
+        }
+      ;
         do{
-        scripture.SplitScripture();
-        Word word = new Word(scripture._wordByWord);
-        word.PickRandomWord();
-        Console.Write(word._word);
-        Console.Write(word.HideWord());
         menu.Display();
         menu.Input();
-
-
-
+        word.DisplayNewScripture();
         } while(menu._quit != "quit");
     }
 }
