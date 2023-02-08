@@ -9,12 +9,15 @@ class Program
         Word word = new Word();
         foreach(string element in word._listOfWords){
             Console.WriteLine(element);
-        }
-      ;
+        };
         do{
         menu.Display();
-        menu.Input();
-        word.DisplayNewScripture();
-        } while(menu._quit != "quit" || word.CountHiddenWords() != word._listOfWords.Count);
-    }
+        if (menu.Input()){
+            menu._quit = "quit";
+        }else{
+        menu._quit = word.DisplayNewScripture();
+        }
+    }while(menu._quit != "quit");
+   
+}
 }
