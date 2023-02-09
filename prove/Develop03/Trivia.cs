@@ -6,12 +6,16 @@ public class Trivia{
 
     public string _correctReference;
 
-    private bool _isCorrect;
+    public bool _isCorrect;
 
 
     public Trivia(){
         _inputReference = "";
         _correctReference = "key";
+    }
+
+    public Trivia(string correctReference){
+        _correctReference = correctReference;
     }
     public Trivia(string reference, string correctReference){
 
@@ -20,7 +24,9 @@ public class Trivia{
 
     }
 
+
     public void GetAnswer(){
+        Console.WriteLine("What is the reference of this scripture?");
         _inputReference = Console.ReadLine();
     }
 
