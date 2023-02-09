@@ -7,9 +7,14 @@ class Program
         
         Menu menu = new Menu();
         Word word = new Word();
-        foreach(string element in word._listOfWords){
-            Console.WriteLine(element);
-        };
+        Scripture scrip = new Scripture();
+        Reference refer = new Reference(scrip._index);
+
+        refer.DisplayReference();
+        string joint = " ";
+        string initialScritpure = String.Join(joint ,word._listOfWords);
+        Console.WriteLine(initialScritpure);
+    
         do{
         menu.Display();
         if (menu.Input()){

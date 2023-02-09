@@ -11,6 +11,8 @@ public class Scripture{
 
     private int _scriptureLenght;
 
+    public int _index;
+
     public Scripture(){
         _scriptures = new List<string>{"The Natural Man is an Enemy of God", "Remember lots Wife","Adam fell that men might be; and men are, that they might have joy.","For God so loveth the world that gaveth his son so the world can be saved"};
 
@@ -25,9 +27,9 @@ public class Scripture{
 
     public void  PickRandomScripture(){
         var random = new Random();
-       int index = random.Next(_scriptures.Count);
+        _index = random.Next(_scriptures.Count);
 
-        _scripture = _scriptures[index];
+        _scripture = _scriptures[_index];
     }
     public void SplitScripture(){
         _wordByWord =  _scripture.Split(' ').ToList();
