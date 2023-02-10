@@ -2,11 +2,11 @@ using System;
 
 public class Trivia{
 
-    public string _inputReference;
+    private string _inputReference;
 
-    public string _correctReference;
+    private string _correctReference;
 
-    public bool _isCorrect;
+    private bool _isCorrect;
 
 
     public Trivia(){
@@ -25,16 +25,26 @@ public class Trivia{
     }
 
 
-    public void GetAnswer(){
+    private void GetAnswer(){
         Console.WriteLine("What is the reference of this scripture?");
         _inputReference = Console.ReadLine();
     }
 
-    public void CheckAnswer(){
+    private void CheckAnswer(){
         if(_inputReference == _correctReference){
         _isCorrect = true;
         } else {
             _isCorrect = false;
+        }
+    }
+
+    public void TriviaGame(){
+        GetAnswer();
+        CheckAnswer();
+        if(_isCorrect){
+            Console.WriteLine("That is correct! A righteous one you are!");
+        }else{
+            Console.WriteLine("That is incorrect :( better luck next time!");
         }
     }
 }
