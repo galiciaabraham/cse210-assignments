@@ -19,9 +19,14 @@ public class Scripture{
         SplitScripture();
 
     }
+
+    /*Keep this constructor for testing, you can set the list of scriptures to what's needed for testing. 
     public Scripture(List<string>scriptures){
         _scriptures = scriptures;
+        PickRandomScripture();
+        SplitScripture();
     }
+    */
 
     public int GetIndex(){
         return _index;
@@ -33,13 +38,13 @@ public class Scripture{
         return _scripture;
     }
 
-    public void  PickRandomScripture(){
+    private void  PickRandomScripture(){
         var random = new Random();
         _index = random.Next(_scriptures.Count);
 
         _scripture = _scriptures[_index];
     }
-    public void SplitScripture(){
+    private void SplitScripture(){
         _wordByWord =  _scripture.Split(' ').ToList();
     }
 
