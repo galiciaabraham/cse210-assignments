@@ -7,20 +7,16 @@ public class Word {
 
     private int _chosenIndex;
 
-    public string _hiddenWord;
-    public List<int> _hiddenWords = new List<int>{};
+    private string _hiddenWord;
+    private List<int> _hiddenWords = new List<int>{};
 
-    public List<string> _listOfWords;
+    private List<string> _listOfWords;
 
     private int _wordCount;
 
-    public Word(){
-        Scripture scripture = new Scripture();
-        scripture.PickRandomScripture();
-        scripture.SplitScripture();
+    public Word(List<string> wordbyword){
         _word = "";
-        _listOfWords = scripture._wordByWord;
-
+        _listOfWords = wordbyword;
     }
     public Word(string word){
         _word = word;
@@ -37,7 +33,6 @@ public class Word {
         int count = 0;
             count += _hiddenWords.Count;
         return count;
-
         }
 
 //ToDo: For now this function is pretty much doing anything but my idea is to make the program stop once the count matches the number of words in the scripture.
@@ -57,24 +52,19 @@ public class Word {
         _hiddenWords.Add(_chosenIndex);
     }
 
-    public void ReturnHiddenScripture(int index){
-        _listOfWords[index] = _hiddenWord;
-
-    }
-
     public void HideAndBuild(){
         int HiddenIndex = PickRandomWord();
         do{
             HiddenIndex = PickRandomWord();
         }while(_hiddenWords.Contains(_chosenIndex));
         HideWord();
-        ReturnHiddenScripture(HiddenIndex);
+        _listOfWords[HiddenIndex] = _hiddenWord;
     }
 
     public string DisplayNewScripture(){
         if(CountHiddenWords() != _listOfWords.Count){
         HideAndBuild();
-        CountHiddenWords();
+        Console.Clear();
         string joint = " ";
         string displayedScripture = String.Join(joint, _listOfWords);
         Console.WriteLine(displayedScripture);

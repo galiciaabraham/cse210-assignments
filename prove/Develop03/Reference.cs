@@ -6,7 +6,7 @@ public class Reference{
     public List<string>_references;
 
     public Reference(int referenceIndex){
-        _references = new List<string>{"Mosiah 3:19","Luke 17:32","Johh 3:16"};
+        _references = new List<string>{"Mosiah 3:19","Luke 17:32","2 Nephi 2:something","John 3:16"};
         _reference = _references[referenceIndex];
     }
 

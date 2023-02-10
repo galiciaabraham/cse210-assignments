@@ -5,22 +5,30 @@ public class Scripture{
 
     private static string _scripture;
 
-    public List<string> _wordByWord;
+    private List<string> _wordByWord;
 
     private List<string> _scriptures;
 
     private int _scriptureLenght;
 
-    public int _index;
+    private int _index;
 
     public Scripture(){
         _scriptures = new List<string>{"The Natural Man is an Enemy of God", "Remember lots Wife","Adam fell that men might be; and men are, that they might have joy.","For God so loveth the world that gaveth his son so the world can be saved"};
+        PickRandomScripture();
+        SplitScripture();
 
     }
     public Scripture(List<string>scriptures){
         _scriptures = scriptures;
     }
 
+    public int GetIndex(){
+        return _index;
+    }
+    public List<string> GetWordbyWord(){
+        return _wordByWord;
+    }
     public string GetScripture(){
         return _scripture;
     }
