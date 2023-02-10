@@ -16,17 +16,19 @@ public class Word {
         _word = "";
         _listOfWords = wordbyword;
     }
+
+    /*Keep this constructor for testing. You can set the _word attribute to what's needed for testing.
     public Word(string word){
         _word = word;
 
     }
-    public int CountHiddenWords(){
+    */
+    private int CountHiddenWords(){
         int count = 0;
             count += _hiddenWords.Count;
         return count;
         }
 
-//ToDo: For now this function is pretty much doing anything but my idea is to make the program stop once the count matches the number of words in the scripture.
 
     private  int PickRandomWord(){
         var random = new Random();
