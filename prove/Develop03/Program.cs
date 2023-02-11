@@ -10,7 +10,8 @@ class Program
         Word word = new Word(scrip.GetWordbyWord());
         Reference refer = new Reference(scrip.GetIndex());
         Trivia trivia = new Trivia(refer.GetReference());
- //TODO: Set all variables to private and write get and set functions to get out whatever info I need outside of the class without compromising the encapsulation of it. OR have the methods return the needed information and then call the methods instead of getting the variables data outside of the class.
+
+        
         Console.WriteLine(scrip.GetScripture());
         trivia.TriviaGame();
         refer.DisplayReference();
