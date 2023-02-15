@@ -10,6 +10,10 @@ public class Assignment
         _studentName = student;
         _topic = topic;
     }
+
+    public string GetName(){
+        return _studentName;
+    }
     public string GetSummary()
     {
         return $"{_studentName} will study {_topic}";
