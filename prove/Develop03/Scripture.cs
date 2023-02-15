@@ -9,8 +9,6 @@ public class Scripture{
 
     private List<string> _scriptures;
 
-    private int _scriptureLenght;
-
     private int _index;
 
     public Scripture(){
