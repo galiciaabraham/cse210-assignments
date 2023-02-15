@@ -1,0 +1,68 @@
+What does the program do? It provides a set of 4 activities that the user can choose from to practice mindfulness
+
+What user inputs does it have? 
+
+-It has the initial menu input where the user will choose the activity.
+-On the activities, it has the seconds input where the user will decide for how many seconds will the activity be performed.
+-The Listing Activity has the input of the items that are entered by the user.
+
+What output does it produce?
+
+-It has a welcome message for each activity.
+-The ending message for each activity.
+-The countdown for each activity.
+-The spinner
+-The different prompts for each activity (breath In... Breath out... // The questions // Number of items that were entered. 
+
+How does the program end?
+
+-By the user entering quit on the Main Menu.
+-Each activity will end once the user entered seconds have ran out and the ending message has displayed for 15 seconds.
+
+
+The Breathing Activity:
+
+	1. Displays the initial message.
+	2. Gets the number of seconds the activity will last. 
+	3. Displays a get-ready message and a Spinner.
+	4. Loops through the "breath in..." and "breath out" with the countdown until the selected seconds are completed.
+	5. Display the ending message.
+	6. Pause. 
+	7. Final final message.
+	8. Returns to the main menu.
+
+The Reflecting Activity:
+
+	1. Displays the initial message.
+	2. Gets the number of seconds the activity will last. 
+	3. Displays a get-ready message and a Spinner.
+	4. Displays a randomly chosen prompt.
+	5. Awaits for the user to hit enter before continuing to display a "once you're ready hit enter" message.
+	6. Displays another message to explain the activity and shows a 5 seconds countdown.
+	7. It starts picking randomly chosen prompts until the selected seconds are completed.
+	8. Display the ending message.
+	9. Pause. 
+	10. Final final message.
+	11. Returns to the main menu.
+
+The Listing Activity:
+
+	The Reflecting Activity:
+
+	1. Displays the initial message.
+	2. Gets the number of seconds the activity will last. 
+	3. Displays a get-ready message and a Spinner.
+	4. Displays another message to explain the activity.
+	5. Displays a randomly chosen prompt.
+	6. Shows a 5 seconds countdown.
+	7. It loops allowing the user to enter as many prompts as he can counting enter as the end of the answer until the selected seconds are completed.
+	8. It counts the number of entered lines. 
+	9. Display the ending message.
+	11. Pause. 
+	12. Final final message.
+	13. Returns to the main menu.
+
+
+
+
+
