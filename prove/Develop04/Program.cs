@@ -9,5 +9,8 @@ class Program
         Activity test1 = new Activity();
         test1.DisplayInitialMessage();
         test1.GetSeconds();
+        test1.DisplayGetReady();
+        test1.DisplayInstructions();
+        test1.DisplayEndingMessage();
     }
 }
