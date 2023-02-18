@@ -6,8 +6,6 @@ public class Activity {
    private string _ending;
    private string _getReady;
    private int _seconds;
-   private string _spinner;
-   private string _countDownNumber;
 
    public Activity(){
     _welcome = "Welcome ma frend";
@@ -41,5 +39,30 @@ public class Activity {
         Console.Write("For how long (in seconds) would you like to perform this activity?");
        string seconds = Console.ReadLine();
        _seconds = Int32.Parse(seconds);
+    }
+
+    public void ShowSpinner(){
+        for (int i = 0; i < 10; i++)
+    {
+        Console.Write("\b|");
+        Thread.Sleep(500);
+        Console.Write("\b/");
+        Thread.Sleep(500);
+        Console.Write("\b-");
+        Thread.Sleep(500);
+        Console.Write("\b\\");
+        Thread.Sleep(500);
+    }
+    }
+    public void CountDown(){
+    {
+        Console.Write("\b3...\b\b\b");
+        Thread.Sleep(2000);
+        Console.Write("\b2...\b\b\b");
+        Thread.Sleep(2000);
+        Console.Write("\b1...\b\b\b");
+        Thread.Sleep(2000);
+        Console.Clear();
+    }
     }
 }
