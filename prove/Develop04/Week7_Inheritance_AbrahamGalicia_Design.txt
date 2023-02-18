@@ -1,4 +1,4 @@
-What does the program do? It provides a set of 4 activities that the user can choose from to practice mindfulness
+What does the program do? It provides a set of 3 activities that the user can choose from to practice mindfulness
 
 What user inputs does it have? 
 
@@ -17,7 +17,7 @@ What output does it produce?
 How does the program end?
 
 -By the user entering quit on the Main Menu.
--Each activity will end once the user entered seconds have ran out and the ending message has displayed for 15 seconds.
+-Each activity will end once the user entered seconds have run out and the ending message has displayed for 15 seconds.
 
 
 The Breathing Activity:
@@ -62,6 +62,20 @@ The Listing Activity:
 	12. Final final message.
 	13. Returns to the main menu.
 
+Classes: 
+
+Menu - Responsibility: To display the menu and get the chosen option. loop through the activities until the options quit is chosen. 
+
+Activity - Responsibility: To hold all attributes and methods all the activities share.
+
+BreathingActivity - Responsibility: To hold all attributes and methods exclusive of the BreathingActivity.
+
+ReflectingActivity - Responsibility: To hold all attributes and methods exclusive of the Reflecting Activity. 
+
+ListingActivity - Responsibility: To hold all attributes and methods exclusive of the Listing Activity. 
+
+
+/*Stretch*/:Avoid prompts to be repeated on the Reflecting and Listing Activity. 
 
 
 
