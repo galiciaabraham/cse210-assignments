@@ -6,11 +6,7 @@ class Program
     {
         Menu menu = new Menu();
         menu.DisplayMenu();
-        Activity test1 = new Activity();
-        test1.DisplayInitialMessage();
-        test1.GetSeconds();
-        test1.DisplayGetReady();
-        test1.DisplayInstructions();
-        test1.DisplayEndingMessage();
+        BreathingActivity breath = new BreathingActivity("Welcome test1", "thank you bye","Just breath!!");
+        breath.BreathMessage();
     }
 }

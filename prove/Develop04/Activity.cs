@@ -20,6 +20,7 @@ public class Activity {
     _getReady = "Get Ready...";
    }
 
+
     public void DisplayInitialMessage(){
         Console.WriteLine(_welcome);
     }
@@ -35,10 +36,15 @@ public class Activity {
     public void DisplayInstructions(){
         Console.WriteLine(_instructions);
     }
-    public void GetSeconds(){
+
+    public void SetSeconds(){
         Console.Write("For how long (in seconds) would you like to perform this activity?");
        string seconds = Console.ReadLine();
        _seconds = Int32.Parse(seconds);
+    }
+
+    public int GetSeconds(){
+        return _seconds;
     }
 
     public void ShowSpinner(){
