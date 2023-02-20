@@ -18,6 +18,8 @@ public class BreathingActivity : Activity{
         Console.WriteLine(_breathIn);
         base.CountDown();      
         Console.WriteLine(_breathOut);
+        base.CountDown();
         } while(base.GetSeconds() != 30);
+        base.DisplayEndingMessage("Breathing Activity");
     }
 }
