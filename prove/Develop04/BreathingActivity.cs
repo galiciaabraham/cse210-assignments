@@ -11,12 +11,9 @@ public class BreathingActivity : Activity{
     }
 
     public void BreathMessage(){
-        base.DisplayInitialMessage();
-        base.SetSeconds();
-        base.DisplayGetReady();
         do{
         Console.WriteLine(_breathIn);
-        base.CountDown();      
+        base.CountDown();    
         Console.WriteLine(_breathOut);
         base.CountDown();
         } while(base.GetSeconds() != 30);

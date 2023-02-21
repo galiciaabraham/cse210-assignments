@@ -27,9 +27,10 @@ public class Activity {
 
     public void DisplayEndingMessage(string activity){
         string seconds = GetSeconds().ToString();
+        Console.WriteLine(" ");
         Console.WriteLine(_ending);
         ShowSpinner();
-        Console.WriteLine($"You have completed{seconds} seconds of the {activity};");
+        Console.WriteLine($"You have completed {seconds} seconds of the {activity};");
     }
 
     public void DisplayGetReady(){
@@ -53,7 +54,7 @@ public class Activity {
     public void ShowSpinner(){
         for (int i = 0; i < 3; i++)
     {
-        Console.Write("\b|");
+        Console.Write("|");
         Thread.Sleep(500);
         Console.Write("\b/");
         Thread.Sleep(500);
@@ -61,17 +62,19 @@ public class Activity {
         Thread.Sleep(500);
         Console.Write("\b\\");
         Thread.Sleep(500);
+        Console.Write("\b");
     }
     }
     public void CountDown(){
     {
-        Console.Write("\b3...\b\b\b");
-        Thread.Sleep(2000);
-        Console.Write("\b2...\b\b\b");
-        Thread.Sleep(2000);
-        Console.Write("\b1...\b\b\b");
-        Thread.Sleep(2000);
-        Console.Write("\b\b\b\b");
+        Console.Write("3...\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("\b2...\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("1...\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("\b");
+        Console.WriteLine();
     }
     }
 }
