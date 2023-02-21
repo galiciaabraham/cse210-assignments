@@ -17,14 +17,23 @@ public class ReflectingActivity : Activity{
 
     public string PickRandomPrompt(){
         //TODO: I need to set a way for the the program to know that all prompts have already been used, probably something with the _alreadyUsed list that will let me know when all index numbers in _prompts have been used.
+        if (_alreadySelected.Count != _prompts.Count){
+            return Randomness();
+            } else{
+                _alreadySelected.Clear();
+                return Randomness();
+            } 
+
+    }  
+
+    private string Randomness(){
         do{
         var random = new Random();
         _index = random.Next(_prompts.Count);
         }while(_alreadySelected.Contains(_index));
         _alreadySelected.Add(_index); 
         return _selectedPrompt = _prompts[_index];
-
-        } 
+        }
 
     public int GetIndex(){
         return _index;
