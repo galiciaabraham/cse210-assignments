@@ -43,8 +43,6 @@ public class ReflectingActivity : Activity{
         return selected = nonSelectedList[index];
         }
 
-
-
     public void DisplayPrompt(){
         _selectedQuestion = PickRandomItem(_indexQuestions,_alreadySelectedQuestions,_questions,_selectedQuestion);
         Console.WriteLine(_selectedQuestion);
