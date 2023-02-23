@@ -44,6 +44,7 @@ public class Activity {
     }
 
     public void SetSeconds(){
+        Console.WriteLine();
         Console.Write("For how long (in seconds) would you like to perform this activity?");
        string seconds = Console.ReadLine();
        _seconds = Int32.Parse(seconds);
@@ -64,7 +65,7 @@ public class Activity {
         Thread.Sleep(500);
         Console.Write("\b\\");
         Thread.Sleep(500);
-        Console.Write("\b");
+        Console.Write("\b\b");
     }
     }
     public void CountDown(){
@@ -75,7 +76,7 @@ public class Activity {
         Thread.Sleep(500);
         Console.Write("1...\b\b\b");
         Thread.Sleep(500);
-        Console.Write("\b");
+        Console.Write("\b\b\b\b");
         Console.WriteLine();
     }
     }

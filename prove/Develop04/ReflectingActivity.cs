@@ -18,6 +18,7 @@ public class ReflectingActivity : Activity{
     }
 
     private string UserReady(){
+        Console.WriteLine();
         Console.WriteLine("Once you're ready hit enter:");
         return _ready = Console.ReadLine();
     }

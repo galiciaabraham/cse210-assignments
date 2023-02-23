@@ -17,17 +17,26 @@ class Program
                 breath.DisplayInitialMessage();
                 breath.DisplayInstructions();
                 breath.SetSeconds();
+                Console.Clear();
                 breath.DisplayGetReady();
+                breath.ShowSpinner();
                 breath.BreathMessage();
                 breath.DisplayEndingMessage("Breathing Activity");
+                breath.ShowSpinner();
+                Console.Clear();
 
             } else if (menu.GetQuit() == "2"){
-                reflect.SetSeconds();
                 reflect.DisplayInitialMessage();
                 reflect.DisplayInstructions();
+                reflect.SetSeconds();
+                Console.Clear();
                 reflect.DisplayGetReady();
+                reflect.ShowSpinner();
+                Console.WriteLine();
                 reflect.DisplayPrompt();
                 reflect.DisplayEndingMessage("Reflecting Activity");
+                reflect.ShowSpinner();
+                Console.Clear();
             } else if (menu.GetQuit() == "3"){
                 list.SetSeconds();
                 list.DisplayInitialMessage();
