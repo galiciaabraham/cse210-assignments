@@ -38,7 +38,9 @@ public class Activity {
     }
 
     public void DisplayInstructions(){
+        Console.WriteLine();
         Console.WriteLine(_instructions);
+        Console.WriteLine();
     }
 
     public void SetSeconds(){

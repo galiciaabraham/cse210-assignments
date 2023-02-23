@@ -20,5 +20,6 @@ public class Menu {
         Console.WriteLine(_prompt);
         Console.Write("Select an option from the menu:");
         _quit = Console.ReadLine();
+        Console.Clear();
     }
 }

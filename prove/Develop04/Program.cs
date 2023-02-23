@@ -14,9 +14,9 @@ class Program
         do {
             menu.DisplayMenu();
             if(menu.GetQuit() == "1"){
-                breath.SetSeconds();
                 breath.DisplayInitialMessage();
                 breath.DisplayInstructions();
+                breath.SetSeconds();
                 breath.DisplayGetReady();
                 breath.BreathMessage();
                 breath.DisplayEndingMessage("Breathing Activity");
