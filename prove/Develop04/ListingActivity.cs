@@ -13,12 +13,10 @@ public class ListingActivity : Activity{
         _prompts = new List<string>{"Who are people that you appreciate","What are personal strengths of yours?","Who are people that you have helped this week?","When have you felt the Holy Ghost this month?","Who are some of your personal heroes?"};
     }
 
-    private string GetInput(){
+    public void GetInput(){
         Console.Write(">");
         _input = Console.ReadLine();
         _inputCount+= 1;
-        return _input;
-
     }
 
     private string PickRandomPrompt(){
@@ -40,6 +38,11 @@ public class ListingActivity : Activity{
     }
     public void DisplayPrompt(){
         PickRandomPrompt();
+        Console.WriteLine("Consider the following prompt:");
         Console.WriteLine(_selectedPrompt);
+    }
+
+    public void DisplayFinalCount(){
+        Console.WriteLine($"Congratulations! You have listed: {_inputCount} items!");
     }
 }

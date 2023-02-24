@@ -40,10 +40,12 @@ class Program
                 Console.Clear();
                 reflect.DisplayGetReady();
                 reflect.ShowSpinner();
-                DateTime startTime = DateTime.Now;
-                DateTime futureTime = startTime.AddSeconds(reflect.GetSeconds());
                 reflect.DisplayQuestion();
                 reflect.UserReady();
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(reflect.GetSeconds());
+                Console.WriteLine("Now ponder on each of the following questions:");
+                reflect.CountDown();
                 while (DateTime.Now < futureTime)
                 {
                 reflect.DisplayPrompt();
@@ -53,22 +55,29 @@ class Program
                 reflect.DisplayEndingMessage("Reflecting Activity");
                 reflect.ShowSpinner();
                 Console.Clear();
+
             } else if (menu.GetQuit() == "3"){
-                list.SetSeconds();
                 list.DisplayInitialMessage();
                 list.DisplayInstructions();
+                list.SetSeconds();
+                Console.Clear();
                 list.DisplayGetReady();
                 list.ShowSpinner();
                 list.DisplayPrompt();
                 DateTime startTime = DateTime.Now;
-                DateTime futureTime = startTime.AddSeconds(reflect.GetSeconds());
+                DateTime futureTime = startTime.AddSeconds(list.GetSeconds());
+                list.CountDown();
                 while (DateTime.Now < futureTime)
                 {
-                
+                list.GetInput();
                 Thread.Sleep(500);
                 }
+                list.DisplayFinalCount();
                 list.DisplayEndingMessage("Listing Activity");
-            } else{
+                list.ShowSpinner();
+                Console.Clear();
+            } else
+            {
                 if (menu.GetQuit() == "4")
                 {
                     Console.Write("Thank you for taking the time to take care for yourself, have a nice day.");

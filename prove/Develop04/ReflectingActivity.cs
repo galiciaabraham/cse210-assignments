@@ -45,11 +45,12 @@ public class ReflectingActivity : Activity{
 
     public void DisplayQuestion(){
         _selectedQuestion = PickRandomItem(_indexQuestions,_alreadySelectedQuestions,_questions,_selectedQuestion);
+        Console.WriteLine("Consider the following prompt:");
         Console.WriteLine(_selectedQuestion);
     }
     public void DisplayPrompt(){        
         _selectedPrompt = PickRandomItem(_indexPrompts,_alreadySelectedPrompts,_prompts,_selectedPrompt);
-        Console.WriteLine(_selectedPrompt);
+        Console.WriteLine($"> {_selectedPrompt}");
     }
     }
     
