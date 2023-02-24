@@ -55,29 +55,53 @@ public class Activity {
     }
 
     public void ShowSpinner(){
-        for (int i = 0; i < 3; i++)
-    {
-        Console.Write("|");
-        Thread.Sleep(500);
-        Console.Write("\b/");
-        Thread.Sleep(500);
-        Console.Write("\b-");
-        Thread.Sleep(500);
-        Console.Write("\b\\");
-        Thread.Sleep(500);
-        Console.Write("\b\b");
-    }
+
+        List<string> lines = new List<string>{"|","/","-","\\"};
+        int i = 0;
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        while (DateTime.Now < endTime)
+        {
+            string character = lines[i];
+            Console.Write(character);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+
+            i++;
+
+            if (i >= lines.Count)
+            {
+                i = 0;
+            }
+
+        }
+        Console.Clear();
+
     }
     public void CountDown(){
     {
-        Console.Write("3...\b\b\b");
-        Thread.Sleep(500);
-        Console.Write("\b2...\b\b\b\b");
-        Thread.Sleep(500);
-        Console.Write("1...\b\b\b");
-        Thread.Sleep(500);
-        Console.Write("\b\b\b\b");
-        Console.WriteLine();
+        List<string> lines = new List<string>{"5","4","3","2","1"};
+        int i = 0;
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        while (DateTime.Now < endTime)
+        {
+            string character = lines[i];
+            Console.Write(character);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+
+            i++;
+
+            if (i >= lines.Count)
+            {
+                i = 0;
+            }
+
+        }
+
     }
     }
 }

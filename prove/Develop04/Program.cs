@@ -11,6 +11,10 @@ class Program
         ReflectingActivity reflect = new ReflectingActivity("Welcome to the Reflecting Activity","Well done like a steak!!","This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
 
         ListingActivity list = new ListingActivity("Welcome to the Reflecting Activity","The force is strong in this one!!","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
         do {
             menu.DisplayMenu();
             if(menu.GetQuit() == "1"){
@@ -45,7 +49,13 @@ class Program
                 list.DisplayPrompt();
                 list.DisplayEndingMessage("Listing Activity");
             } else{
+                if (menu.GetQuit() == "4")
+                {
+                    Console.Write("Thank you for taking the time to take care for yourself, have a nice day.");
+                } else{
+
                 Console.WriteLine("option not valid");
+                }
             }
         } while (menu.GetQuit() != "4");
     }
