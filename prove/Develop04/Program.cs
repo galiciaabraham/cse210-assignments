@@ -12,8 +12,6 @@ class Program
 
         ListingActivity list = new ListingActivity("Welcome to the Reflecting Activity","The force is strong in this one!!","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
 
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
 
         do {
             menu.DisplayMenu();
@@ -24,7 +22,13 @@ class Program
                 Console.Clear();
                 breath.DisplayGetReady();
                 breath.ShowSpinner();
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(breath.GetSeconds());
+                while (DateTime.Now < futureTime)
+                {
                 breath.BreathMessage();
+                Thread.Sleep(500);
+                }
                 breath.DisplayEndingMessage("Breathing Activity");
                 breath.ShowSpinner();
                 Console.Clear();
@@ -36,8 +40,16 @@ class Program
                 Console.Clear();
                 reflect.DisplayGetReady();
                 reflect.ShowSpinner();
-                Console.WriteLine();
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(reflect.GetSeconds());
+                reflect.DisplayQuestion();
+                reflect.UserReady();
+                while (DateTime.Now < futureTime)
+                {
                 reflect.DisplayPrompt();
+                Thread.Sleep(5000);
+                reflect.ShowSpinner();
+                }
                 reflect.DisplayEndingMessage("Reflecting Activity");
                 reflect.ShowSpinner();
                 Console.Clear();
@@ -46,7 +58,15 @@ class Program
                 list.DisplayInitialMessage();
                 list.DisplayInstructions();
                 list.DisplayGetReady();
+                list.ShowSpinner();
                 list.DisplayPrompt();
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(reflect.GetSeconds());
+                while (DateTime.Now < futureTime)
+                {
+                
+                Thread.Sleep(500);
+                }
                 list.DisplayEndingMessage("Listing Activity");
             } else{
                 if (menu.GetQuit() == "4")

@@ -17,7 +17,7 @@ public class ReflectingActivity : Activity{
         _questions = new List<string>{"Think of a time when you stood up for someone else.","Think of a time when you did something really difficult.","Think of a time when you helped someone in need.","Think of a time when you did something truly selfless."};
     }
 
-    private string UserReady(){
+    public string UserReady(){
         Console.WriteLine();
         Console.WriteLine("Once you're ready hit enter:");
         return _ready = Console.ReadLine();
@@ -25,7 +25,6 @@ public class ReflectingActivity : Activity{
 
 
     private string PickRandomItem(int index, List<int> selectedList, List<string> nonSelectedList, string selected){
-        //TODO: I need to set a way for the the program to know that all prompts have already been used, probably something with the _alreadyUsed list that will let me know when all index numbers in _prompts have been used.
         if (selectedList.Count != nonSelectedList.Count){
             return selected = Randomness(index,selectedList,nonSelectedList,selected);
             } else{
@@ -44,18 +43,13 @@ public class ReflectingActivity : Activity{
         return selected = nonSelectedList[index];
         }
 
-    public void DisplayPrompt(){
+    public void DisplayQuestion(){
         _selectedQuestion = PickRandomItem(_indexQuestions,_alreadySelectedQuestions,_questions,_selectedQuestion);
         Console.WriteLine(_selectedQuestion);
-        UserReady();
-        if (_ready == ""){
-        for (int i = 0; i < base.GetSeconds(); i++){
+    }
+    public void DisplayPrompt(){        
         _selectedPrompt = PickRandomItem(_indexPrompts,_alreadySelectedPrompts,_prompts,_selectedPrompt);
         Console.WriteLine(_selectedPrompt);
-        } 
-        } else {
-            UserReady();
-        }
     }
     }
     

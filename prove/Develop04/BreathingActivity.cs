@@ -13,8 +13,8 @@ public class BreathingActivity : Activity{
     public void BreathMessage(){
         Console.WriteLine();
         Console.WriteLine(_breathIn);
-        base.CountDown();    
-        Console.WriteLine(_breathOut);
         base.CountDown();
+        Console.WriteLine(_breathOut);
+        base.CountDown();  
     }
 }

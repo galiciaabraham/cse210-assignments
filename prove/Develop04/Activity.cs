@@ -76,7 +76,7 @@ public class Activity {
             }
 
         }
-        Console.Clear();
+
 
     }
     public void CountDown(){

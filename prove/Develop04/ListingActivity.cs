@@ -39,11 +39,7 @@ public class ListingActivity : Activity{
             return _selectedPrompt = _prompts[_index];
     }
     public void DisplayPrompt(){
-        //TODO: I need to make sure I'm using this method for what it was designed for, I also need to make sure I keep a list of the already selected prompts that will surive through the looping of the Whole program so if the user decides to start the same activity more than once the same prompt is not repeated until all prompts have been displayed. Make sure you display the prompt and storage the number of inputs from the user.
         PickRandomPrompt();
         Console.WriteLine(_selectedPrompt);
-        do {
-        GetInput();
-        }while(base.GetSeconds() != 30);
     }
 }
