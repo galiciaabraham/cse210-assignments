@@ -1,9 +1,13 @@
 using System;
 
-public abstract class Shape
+public class Shape
 {
     private string _color;
 
+
+    public Shape(string color){
+        _color = color;
+    }
     public string GetColor()
     {
         return _color;
@@ -14,5 +18,8 @@ public abstract class Shape
         _color = color;
     }
 
-    public abstract double GetArea();
+    public virtual double GetArea()
+    {
+        return 0;
+    }
 }
