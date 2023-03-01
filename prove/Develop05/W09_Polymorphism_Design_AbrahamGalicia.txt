@@ -1,0 +1,60 @@
+What does the program do?
+The user has the ability to create new goals in a tracker file. 
+It begins by showing the score the user has (if no file has been loaded the score is 0).
+The user will be able to choose an option from a menu to:
+
+1. Create New Goal.
+	It shows a list of the type of goals the user can create:
+	And asks the user the type of goal they want to create.
+	1. Simple goal.
+		It asks "What is the name of your goal?"
+		It asks "What is a short description of it?"
+		It asks "What is the amount of points associated with this goal?"
+	This type of goal will be marked as completed once the user records the event.
+		
+	2. Eternal goal.
+		It asks "What is the name of your goal?"
+		It asks "What is a short description of it?"
+		It asks "What is the amount of points associated with this goal?"
+	This type of goal will never be marked as completed but will sum the points earned to the user's score.
+	3. Checklist goal. 
+		It asks "What is the name of your goal?"
+		It asks "What is a short description of it?"
+		It asks "What is the base amount of points associated with this goal?"
+		It asks "How many times does this goal need to be accomplished for a bonus?"
+		It asks "What is the bonus for accomplishing it that many times?"
+	This type of goal will have an additional Currently completed x/x and once reached it will be marked as completed. 
+
+2. List Goals.
+	It displays all the goals that have been created (but not saved necessarily) or that have been loaded from the loaded txt file. And depending on the goal type, if they have been completed, how many times has been completed.
+
+3. Save Goals.
+	It will ask for a file name:
+	It will either create or rewrite the selected file. 
+	the txt file will save the score of the user in the first line and then:
+	It will build a formatted string containing {the type of goal (or the class)}:{The name of the goal}{The description of the goal}{The points associated with the goal}{If the goal has been completed or not in the case of the simple goals}OR{the bonus points for completing the checklist goal}{the needed times for the bonus and the completed times}.  
+
+4. Load Goals. 
+	It will ask for a file name:
+	It will fill out a list of objects with the contained goals in the txt file by reading the class type and then filling in the needed information. 
+
+5. Record Event
+	It will list the goals that have been loaded from the txt file or that have been just created by the user.
+	It will ask "Which goal did you accomplish?"
+	Depending on the case it will sum up the score and check whether the goal was completed or not for the simple goals 
+	And check whether or not the bonus has been reached for the checklist goals. 
+	
+6. Quit
+	It will end the program.
+ 
+What user inputs does it have?
+The chosen option. 
+The type of goal the user wants to create. 
+All the needed information for that type of goal.
+The type of goal the user wants to record or mark as completed. 
+The file name the user wants to either create or load. 
+What output does it produce?
+It displays the score that the user has.
+It will create or overwrite a txt file with the written goals, recorded events, and specific data of each type of goal.
+How does the program end?
+By the user typing 6 on the menu.
