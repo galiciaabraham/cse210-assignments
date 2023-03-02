@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        Menu testmenu1 = new Menu();
+
+        testmenu1.DisplayMenu();
+        testmenu1.SetOption(Console.ReadLine());
+        Console.WriteLine(testmenu1.GetOption());
     }
 }
