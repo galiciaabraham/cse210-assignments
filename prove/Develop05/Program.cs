@@ -4,10 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Menu testmenu1 = new Menu();
+        List<string> deserializedExample = new List<string>{"Hello World","Hello mom","Hello Moose","Goodbye moon"};
 
-        testmenu1.DisplayMenu();
-        testmenu1.SetOption(Console.ReadLine());
-        Console.WriteLine(testmenu1.GetOption());
+        List<string> serializedExample = new List<string>{""};
+
+        GoalFile filetest1 = new GoalFile(deserializedExample,serializedExample);
+
+        filetest1.SetFileName(Console.ReadLine());
+        filetest1.ListGoals();
+        Console.WriteLine(filetest1.GetFileName());
+        Console.WriteLine(filetest1.SaveGoals());
+
+        
     }
 }
