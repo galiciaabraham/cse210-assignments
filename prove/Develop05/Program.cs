@@ -13,8 +13,8 @@ class Program
         filetest1.SetFileName(Console.ReadLine());
         filetest1.ListGoals();
         Console.WriteLine(filetest1.GetFileName());
-        Console.WriteLine(filetest1.SaveGoals());
+        filetest1.LoadGoals();
+        filetest1.ListGoals();
 
-        
     }
 }

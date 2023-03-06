@@ -40,10 +40,28 @@ public class GoalFile
             foreach(string goal in _serializedGoals)
             {
                 outputFile.WriteLine($"{goal}");
-            }
-            
+            }     
         }
-
     }
 
+    private string ArrayToString(string[] array)
+    {
+        var result = string.Empty;
+        foreach (var item in array)
+        {
+            result += item;
+        }
+        return result;
+    }
+    public void LoadGoals()
+    {
+        string[] lines = System.IO.File.ReadAllLines(_fileName);
+
+        foreach(string line in lines)
+        {
+            string[] parts = line.Split(",");
+            string newLine = ArrayToString(parts);
+            _deserializedGoals.Add(newLine);
+        }
+    }
 }
