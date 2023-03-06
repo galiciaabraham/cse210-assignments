@@ -58,3 +58,5 @@ It displays the score that the user has.
 It will create or overwrite a txt file with the written goals, recorded events, and specific data of each type of goal.
 How does the program end?
 By the user typing 6 on the menu.
+
+**For the stretch challenge I will have a Leveling system that will have a level from 1 to 10 depending on the user's score.

@@ -1,17 +1,17 @@
 using System;
+using System.IO;
 
 public class GoalFile
 {
     private string _fileName;
     private List<string> _deserializedGoals;
     private List<string> _serializedGoals;
-
     private string _formatedGoal;
 
     public GoalFile (List<string>deserialized, List<string>serialized)
     {
-        _deserializedGoals = deserialized;
-        _serializedGoals = serialized; 
+        _serializedGoals = serialized;
+        _deserializedGoals = deserialized; 
     }
 
     public void SetFileName(string fileName)
@@ -32,14 +32,18 @@ public class GoalFile
         }
     }
 
-    public string SaveGoals()
+    public void SaveGoals(string serialized)
     {
-        foreach(string element in _deserializedGoals)
+        _serializedGoals.Add(serialized);
+        using(StreamWriter outputFile = new StreamWriter(_fileName))
         {
-            _formatedGoal += $"{element}, ";
+            foreach(string goal in _serializedGoals)
+            {
+                outputFile.WriteLine($"{goal}");
+            }
+            
         }
-        _serializedGoals.Add(_formatedGoal);
-        return _formatedGoal;
+
     }
 
 }
