@@ -43,6 +43,14 @@ public abstract class Goal
         Console.WriteLine(_score);
     }
 
+    public abstract string DeserializeGoal();
+    public abstract List<Goal> SerializeGoal();
+    public abstract void RecordEvent();
+    public abstract int CalculateScore();
+    public abstract Boolean CheckCompletion();
+    public abstract void MarkCompletion();
+
+
 
 
 
