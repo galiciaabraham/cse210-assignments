@@ -4,6 +4,7 @@ public class Menu
 {
     private string _prompt;
     private string _option;
+    private string _goalType;
 
     public Menu()
     {
@@ -23,5 +24,20 @@ public class Menu
     public void DisplayMenu()
     {
         Console.Write(_prompt);
+    }
+
+    public void SetGoalType(string goalType)
+    {
+        _goalType = goalType;
+    }
+
+    public string GetGoalType()
+    {
+        return _goalType;
+    }
+
+    public void DisplayGoalTypes()
+    {
+        Console.Write("The types of Goals are:\n1. Simple Goal\n2.Eternal Goal\n3. Checklist Goal\nWhich type of goal would you like to select?: ");
     }
 }

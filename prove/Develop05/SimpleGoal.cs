@@ -8,7 +8,7 @@ public class SimpleGoal : Goal
     private string toEditGoal;
     private Boolean _completed;
 
-        
+
     public override List<string> DeserializeGoal()
     {
         _deserializedGoal.Add(base.GetGoalType());
@@ -20,6 +20,7 @@ public class SimpleGoal : Goal
 
     public override string SerializeGoal()
     {
+        _serializedGoal = string.Join("",_deserializedGoal);
         return _serializedGoal;
     }
     public override void RecordEvent()
@@ -28,6 +29,7 @@ public class SimpleGoal : Goal
     }
     public override int CalculateScore()
     {
+
         return _goalPoints;
     }
 
