@@ -14,19 +14,38 @@ public abstract class Goal
 
     public void SetGoalType(string goalType)
     {
-        _goalType = goalType;
+        _goalType = goalType;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    }
+    public string GetGoalType()
+    {
+        return _goalType;
     }
     public void SetGoalName(string goalName)
     {
         _goalName = goalName;
     }
+
+    public string GetGoalName()
+    {
+        return _goalName;
+    }
     public void SetGoalDescription(string goalDescription)
     {
         _goalType = goalDescription;
     }
+
+    public string GetGoalDescription()
+    {
+        return _goalDescription;
+    }
     public void SetGoalPoints(int goalPoints)
     {
         _goalPoints = goalPoints;
+    }
+
+    public int GetGoalPoints()
+    {
+        return _goalPoints;
     }
 
     public void SetScore(string score)
@@ -43,17 +62,11 @@ public abstract class Goal
         Console.WriteLine(_score);
     }
 
-    public abstract string DeserializeGoal();
-    public abstract List<Goal> SerializeGoal();
+    public abstract List<string> DeserializeGoal();
+    public abstract string SerializeGoal();
     public abstract void RecordEvent();
     public abstract int CalculateScore();
     public abstract Boolean CheckCompletion();
     public abstract void MarkCompletion();
-
-
-
-
-
-
 
 }
