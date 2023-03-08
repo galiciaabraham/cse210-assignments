@@ -22,6 +22,7 @@ public abstract class Goal
     }
     public void SetGoalName(string goalName)
     {
+        Console.Write("What is the name of your goal? ");
         _goalName = goalName;
     }
 
@@ -31,6 +32,7 @@ public abstract class Goal
     }
     public void SetGoalDescription(string goalDescription)
     {
+        Console.Write("What is a short description of it? ");
         _goalType = goalDescription;
     }
 
@@ -40,6 +42,7 @@ public abstract class Goal
     }
     public void SetGoalPoints(int goalPoints)
     {
+        Console.Write("What are the points associated with this goal? ");
         _goalPoints = goalPoints;
     }
 
