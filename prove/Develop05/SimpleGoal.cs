@@ -20,7 +20,13 @@ public class SimpleGoal : Goal
 
     public override string SerializeGoal()
     {
+
         _serializedGoal = string.Join("",_deserializedGoal);
+        return _serializedGoal;
+
+    }
+
+    public string GetSerializedGoal(){
         return _serializedGoal;
     }
     public override void RecordEvent()

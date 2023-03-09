@@ -40,10 +40,10 @@ public abstract class Goal
     {
         return _goalDescription;
     }
-    public void SetGoalPoints(int goalPoints)
+    public void SetGoalPoints(string goalPoints)
     {
         Console.Write("What are the points associated with this goal? ");
-        _goalPoints = goalPoints;
+        _goalPoints = Int32.Parse(goalPoints);
     }
 
     public int GetGoalPoints()

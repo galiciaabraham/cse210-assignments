@@ -4,11 +4,11 @@ using System.IO;
 public class GoalFile
 {
     private string _fileName;
-    private List<string> _deserializedGoals;
+    private List<Goal> _deserializedGoals;
     private List<string> _serializedGoals;
     private string _formatedGoal;
 
-    public GoalFile (List<string>deserialized, List<string>serialized)
+    public GoalFile (List<Goal>deserialized, List<string>serialized)
     {
         _serializedGoals = serialized;
         _deserializedGoals = deserialized; 
@@ -26,7 +26,7 @@ public class GoalFile
 
     public void ListGoals()
     {
-        foreach(string element in _deserializedGoals)
+        foreach(Goal element in _deserializedGoals)
         {
             Console.WriteLine(element);
         }
@@ -60,8 +60,11 @@ public class GoalFile
         foreach(string line in lines)
         {
             string[] parts = line.Split(",");
-            string newLine = ArrayToString(parts);
-            _deserializedGoals.Add(newLine);
+            foreach (var item in parts)
+            {
+                _serializedGoals.Add(item);
+            }
+            
         }
     }
 }
