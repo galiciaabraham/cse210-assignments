@@ -20,30 +20,30 @@ public abstract class Goal
     {
         return _goalType;
     }
-    public void SetGoalName(string goalName)
+    public void SetGoalName()
     {
-        Console.Write("What is the name of your goal? ");
-        _goalName = goalName;
+        Console.Write("What is the name of your goal?");
+        _goalName = Console.ReadLine();
     }
 
     public string GetGoalName()
     {
         return _goalName;
     }
-    public void SetGoalDescription(string goalDescription)
+    public void SetGoalDescription()
     {
         Console.Write("What is a short description of it? ");
-        _goalType = goalDescription;
+        _goalDescription = Console.ReadLine();
     }
 
     public string GetGoalDescription()
     {
         return _goalDescription;
     }
-    public void SetGoalPoints(string goalPoints)
+    public void SetGoalPoints()
     {
         Console.Write("What are the points associated with this goal? ");
-        _goalPoints = Int32.Parse(goalPoints);
+        _goalPoints = Int32.Parse(Console.ReadLine());
     }
 
     public int GetGoalPoints()
@@ -69,7 +69,7 @@ public abstract class Goal
     public abstract string SerializeGoal();
     public abstract void RecordEvent();
     public abstract int CalculateScore();
-    public abstract Boolean CheckCompletion();
-    public abstract void MarkCompletion();
+    //public abstract Boolean CheckCompletion();
+    //public abstract void MarkCompletion();
 
 }

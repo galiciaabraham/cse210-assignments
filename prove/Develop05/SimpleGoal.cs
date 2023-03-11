@@ -38,17 +38,5 @@ public class SimpleGoal : Goal
 
         return _goalPoints;
     }
-
-    public override Boolean CheckCompletion()
-    {
-        if()
-        {
-            return true;
-        } else{
-            return false;
-        }
-
-    }
-    public override void MarkCompletion();
     
 }

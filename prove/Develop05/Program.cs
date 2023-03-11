@@ -22,15 +22,20 @@ class Program
             if(menu.GetGoalType() == "1")
             {
                 simplegoal.SetGoalType(menu.GetGoalType());
-                simplegoal.SetGoalName(Console.ReadLine());
-                simplegoal.SetGoalDescription(Console.ReadLine());
-                simplegoal.SetGoalPoints(Console.ReadLine());
+                simplegoal.SetGoalName();
+                simplegoal.SetGoalDescription();
+                simplegoal.SetGoalPoints();
+                simplegoal.DeserializeGoal();
                 simplegoal.SerializeGoal();
                 serializedgoals.Add(simplegoal.GetSerializedGoal());
             }   
         }
         else if (menu.GetOption() == "2")
         {
+            foreach(Goal goal in goals)
+            {
+                goal.DeserializeGoal();
+            }
             goaltreatment.ListGoals();   
         }
         } while (menu.GetOption() != "6");
