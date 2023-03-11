@@ -31,7 +31,7 @@ public class SimpleGoal : Goal
     }
     public override int CalculateScore()
     {
-
+        
         return _goalPoints;
     }
     

@@ -52,8 +52,13 @@ class Program
         // Save Goals. 
         } else if(menu.GetOption() == "3")
         {
-            
+            goaltreatment.SaveGoals(111);
+        //Load Goals.
+        } else if(menu.GetOption() == "4")
+        {
+
         }
+
         } while (menu.GetOption() != "6");
 }
 }
