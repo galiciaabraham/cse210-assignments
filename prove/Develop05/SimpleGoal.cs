@@ -3,7 +3,7 @@ using System;
 public class SimpleGoal : Goal
 {
     private string _serializedGoal;
-    private List<string> _deserializedGoal;
+    private List<string> _deserializedGoal = new List<string>{};
     private int _goalPoints;
     private string toEditGoal;
     private Boolean _completed;
@@ -20,10 +20,9 @@ public class SimpleGoal : Goal
 
     public override string SerializeGoal()
     {
-
-        _serializedGoal = string.Join("",_deserializedGoal);
+        _serializedGoal = $"[] ";
+        _serializedGoal = string.Join(", ",_deserializedGoal);
         return _serializedGoal;
-
     }
 
     public string GetSerializedGoal(){
