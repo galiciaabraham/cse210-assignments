@@ -52,11 +52,11 @@ class Program
         // Save Goals. 
         } else if(menu.GetOption() == "3")
         {
-            goaltreatment.SaveGoals(111);
+            goaltreatment.SaveGoals(111,0);
         //Load Goals.
         } else if(menu.GetOption() == "4")
         {
-
+            _serializedGoals = goaltreatment.LoadGoals();
         }
 
         } while (menu.GetOption() != "6");
