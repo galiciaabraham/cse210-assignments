@@ -29,9 +29,10 @@ public class SimpleGoal : Goal
         Console.Write("Which goal would you like to edit?: ");
         toEditGoal = Console.ReadLine();
     }
-    public override int CalculateScore()
+    public override string CalculateScore(int score)
     {
-        
-        return _goalPoints;
+        int scoreResult = _goalPoints += score;
+        base.SetScore(scoreResult.ToString()) ;
+        return base.GetScore();
     }
 }

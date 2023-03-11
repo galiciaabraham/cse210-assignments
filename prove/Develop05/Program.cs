@@ -9,14 +9,24 @@ class Program
         GoalFile goaltreatment = new GoalFile(_serializedGoals);
         SimpleGoal simple = new SimpleGoal();
         Menu menu = new Menu();
+        Level level = new Level();
+
+        int initialScore = 0;
+        string initiallevel = "0";
+        level.SetLevel(initiallevel);
+        simple.CalculateScore(initialScore);    
+
 
          do{
+        level.DisplayLevel();
+        simple.DisplayScore();
         menu.DisplayMenu();
         menu.SetOption(Console.ReadLine());
 
         //Create New Goal.
         if(menu.GetOption() == "1")
         {
+            
             menu.DisplayGoalTypes();
             menu.SetGoalType(Console.ReadLine());
             if(menu.GetGoalType() == "1")

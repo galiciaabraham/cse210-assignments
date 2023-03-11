@@ -22,5 +22,6 @@ public class Level
     public void DisplayLevel()
     {
         Console.Write($"Your current level is: {_level}");
+        Console.WriteLine();
     }
 }

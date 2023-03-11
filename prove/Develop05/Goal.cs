@@ -68,13 +68,13 @@ public abstract class Goal
     }
     public void DisplayScore()
     {
-        Console.WriteLine(_score);
+        Console.WriteLine($"Your score is: {_score}");
     }
 
     public abstract List<string> DeserializeGoal();
     public abstract string SerializeGoal();
     public abstract void RecordEvent();
-    public abstract int CalculateScore();
+    public abstract string CalculateScore(int score);
 
     //public abstract Boolean CheckCompletion();
     //public abstract void MarkCompletion();
