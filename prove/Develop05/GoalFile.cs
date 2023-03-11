@@ -21,10 +21,11 @@ public class GoalFile
     {
         return _fileName;
     }
-    public void SaveGoals()
+    public void SaveGoals(int score)
     {
         using(StreamWriter outputFile = new StreamWriter(_fileName))
         {
+            outputFile.WriteLine($"{score}");
             foreach(string goal in _serializedGoals)
             {
                 outputFile.WriteLine($"{goal}");
