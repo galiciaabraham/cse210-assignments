@@ -4,37 +4,25 @@ using System.IO;
 public class GoalFile
 {
     private string _fileName;
-    private List<Goal> _deserializedGoals;
-    private List<string> _serializedGoals;
-    private string _formatedGoal;
+    private List<string> _serializedGoals = new List<string>{};
 
-    public GoalFile (List<Goal>deserialized, List<string>serialized)
+    public GoalFile (List<string> serialized)
     {
         _serializedGoals = serialized;
-        _deserializedGoals = deserialized; 
     }
 
-    public void SetFileName(string fileName)
+    public void SetFileName()
     {
-        _fileName = fileName;
+        Console.Write("What is the name of the file name?: ");
+        _fileName = Console.ReadLine();
     }
 
     public string GetFileName()
     {
         return _fileName;
     }
-
-    public void ListGoals()
+    public void SaveGoals()
     {
-        foreach(Goal element in _deserializedGoals)
-        {
-            Console.WriteLine(element);
-        }
-    }
-
-    public void SaveGoals(string serialized)
-    {
-        _serializedGoals.Add(serialized);
         using(StreamWriter outputFile = new StreamWriter(_fileName))
         {
             foreach(string goal in _serializedGoals)
@@ -43,28 +31,15 @@ public class GoalFile
             }     
         }
     }
-
-    private string ArrayToString(string[] array)
+    public List<string> LoadGoals()
     {
-        var result = string.Empty;
-        foreach (var item in array)
-        {
-            result += item;
-        }
-        return result;
-    }
-    public void LoadGoals()
-    {
+        _serializedGoals.Clear();
         string[] lines = System.IO.File.ReadAllLines(_fileName);
 
         foreach(string line in lines)
         {
-            string[] parts = line.Split(",");
-            foreach (var item in parts)
-            {
-                _serializedGoals.Add(item);
-            }
-            
+                _serializedGoals.Add(line);      
         }
+        return _serializedGoals;
     }
 }

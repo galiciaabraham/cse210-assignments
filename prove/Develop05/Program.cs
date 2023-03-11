@@ -4,42 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Menu menu = new Menu();
-        SimpleGoal simplegoal = new SimpleGoal();
-
-        List<Goal> goals = new List<Goal>{simplegoal};
-        List<string> serializedgoals = new List<string>{};
-
-        GoalFile goaltreatment = new GoalFile(goals,serializedgoals);
-
-        do{
-        menu.DisplayMenu();
-        menu.SetOption(Console.ReadLine());
-        if(menu.GetOption() == "1")
-        {
-            menu.DisplayGoalTypes();
-            menu.SetGoalType(Console.ReadLine());
-            if(menu.GetGoalType() == "1")
-            {
-                simplegoal.SetGoalType(menu.GetGoalType());
-                simplegoal.SetGoalName();
-                simplegoal.SetGoalDescription();
-                simplegoal.SetGoalPoints();
-                simplegoal.DeserializeGoal();
-                simplegoal.SerializeGoal();
-                serializedgoals.Add(simplegoal.GetSerializedGoal());
-            }   
-        }
-        else if (menu.GetOption() == "2")
-        {
-            foreach(Goal goal in goals)
-            {
-                goal.DeserializeGoal();
-            }
-            goaltreatment.ListGoals();   
-        }
-        } while (menu.GetOption() != "6");
-
+        List<string> _serializedGoals = new List<string>{",Goal one,not completed, with this name, this description, 100","Goal two, with this name, this description 2, 200","Goal three, completed, with this name, this description, 300,1000,5/5"};
+        GoalFile goaltreatment = new GoalFile(_serializedGoals);
+        goaltreatment.SetFileName();
+        goaltreatment.SaveGoals();
+        _serializedGoals = goaltreatment.LoadGoals();
 
     }
 }
