@@ -6,11 +6,12 @@ public class SimpleGoal : Goal
     private List<string> _deserializedGoal = new List<string>{};
     private int _goalPoints;
     private string toEditGoal;
-    private Boolean _completed;
 
 
     public override List<string> DeserializeGoal()
     {
+        _deserializedGoal.Clear();
+        _deserializedGoal.Add(base.GetCompleted());
         _deserializedGoal.Add(base.GetGoalType());
         _deserializedGoal.Add(base.GetGoalName());
         _deserializedGoal.Add(base.GetGoalDescription());
@@ -20,16 +21,12 @@ public class SimpleGoal : Goal
 
     public override string SerializeGoal()
     {
-        _serializedGoal = $"[] ";
-        _serializedGoal = string.Join(", ",_deserializedGoal);
-        return _serializedGoal;
-    }
-
-    public string GetSerializedGoal(){
+        _serializedGoal = string.Join(",",_deserializedGoal);
         return _serializedGoal;
     }
     public override void RecordEvent()
     {
+        Console.Write("Which goal would you like to edit?: ");
         toEditGoal = Console.ReadLine();
     }
     public override int CalculateScore()

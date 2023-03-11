@@ -10,7 +10,7 @@ public abstract class Goal
     private List<Goal> _deserializedGoal;
     private string _score;
     private string toEditGoal;
-    private Boolean _completed;
+    private string _completed;
 
     public void SetGoalType(string goalType)
     {
@@ -20,37 +20,43 @@ public abstract class Goal
     {
         return _goalType;
     }
-    public void SetGoalName()
+    public void SetGoalName(string goalName)
     {
-        Console.Write("What is the name of your goal?");
-        _goalName = Console.ReadLine();
+        _goalName = goalName;
     }
 
     public string GetGoalName()
     {
         return _goalName;
     }
-    public void SetGoalDescription()
+    public void SetGoalDescription(string goalDescription)
     {
-        Console.Write("What is a short description of it? ");
-        _goalDescription = Console.ReadLine();
+        _goalDescription = goalDescription;
     }
 
     public string GetGoalDescription()
     {
         return _goalDescription;
     }
-    public void SetGoalPoints()
+    public void SetGoalPoints(string goalPoints)
     {
-        Console.Write("What are the points associated with this goal? ");
-        _goalPoints = Int32.Parse(Console.ReadLine());
+        _goalPoints = Int32.Parse(goalPoints);
     }
 
-    public int GetGoalPoints()
+        public int GetGoalPoints()
     {
         return _goalPoints;
     }
 
+    public void SetCompleted(string completed)
+    {
+        _completed = completed;
+    }
+
+    public string GetCompleted()
+    {
+        return _completed;
+    }
     public void SetScore(string score)
     {
         _score = score;
@@ -69,6 +75,7 @@ public abstract class Goal
     public abstract string SerializeGoal();
     public abstract void RecordEvent();
     public abstract int CalculateScore();
+
     //public abstract Boolean CheckCompletion();
     //public abstract void MarkCompletion();
 
