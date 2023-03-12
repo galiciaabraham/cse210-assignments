@@ -58,4 +58,19 @@ public List<Goal> LoadGoals()
     }
     return _serializedGoals;
 }
+
+public int LoadScore()
+{
+     int score;
+    string[] lines = System.IO.File.ReadAllLines(_fileName);
+    score = Int16.Parse(lines[1]);  
+    return score;
+}
+public int LoadLevel()
+{
+    int level;
+    string[] lines = System.IO.File.ReadAllLines(_fileName);
+    level = Int16.Parse(lines[0]);  
+    return level;
+}
 }

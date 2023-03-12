@@ -10,7 +10,7 @@ static List<Goal> goals = new List<Goal>();
 
         int initialScore = 0;
         int initiallevel = 0;
-        level.SetLevel(initiallevel.ToString());
+        level.SetLevel(initiallevel);
 
     do{
         
@@ -53,17 +53,21 @@ static List<Goal> goals = new List<Goal>();
         {
             goaltreatment.SetFileName();
             goaltreatment.LoadGoals();
+            initialScore = goaltreatment.LoadScore();
+            initiallevel = goaltreatment.LoadLevel();
         //Record Event.
         } else if (menu.GetOption() == "5"){
             Console.WriteLine("Goals:");
             foreach (Goal goal1 in goals)
             {
                 Console.WriteLine(goal1.CheckCompletion());
+                goal1.CalculateScore(initialScore);
             }
             Console.Write("Enter goal index: ");
             int index = Int16.Parse(Console.ReadLine());
             Goal goal = goals[index];
             goal.RecordEvent();
+            level.IncreaseLevel(initialScore);
         }
     } while (menu.GetOption() != "6");
 }
