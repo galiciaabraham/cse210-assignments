@@ -29,27 +29,33 @@ public class GoalFile
             outputFile.WriteLine($"{score}");
             foreach(Goal goal in _serializedGoals)
             {
-                outputFile.WriteLine($"{goal}");
+                
+                string type = goal.GetGoalType();
+                string name = goal.GetGoalName();
+                string description = goal.GetGoalDescription();
+                string value = goal.GetGoalPoints().ToString();
+                outputFile.WriteLine($"{type},{name},{description},{value}");
             }     
         }
-    }
-    public List<Goal> LoadGoals(List<Goal> serialized)
+    }  
+public List<Goal> LoadGoals()
+{
+    _serializedGoals.Clear();
+    string[] lines = System.IO.File.ReadAllLines(_fileName).Skip(2).ToArray();
+    
+    foreach (string line in lines)
     {
-        _serializedGoals.Clear();
-        string[] lines = System.IO.File.ReadAllLines(_fileName);
-
-        foreach(string line in lines)
-        {      
-            serialized.Add(line);      
-        }
-        return serialized;
-    }
-
-    public void ListGoals(List<string> goals)
-    {
-        foreach (string item in goals)
+        string[] data = line.Split(',');
+        string type = data[0];
+        string name = data[1];
+        string description = data[2];
+        int value = int.Parse(data[3]);
+        if (type == "1")
         {
-            Console.WriteLine(item);
-        }
+           Goal simplegoal = new SimpleGoal(name,description,value);
+           _serializedGoals.Add(simplegoal);
+        } 
     }
+    return _serializedGoals;
+}
 }
