@@ -6,8 +6,6 @@ public abstract class Goal
     private string _goalName;
     private string _goalDescription;
     private int _goalPoints;
-    private string _serializedGoal;
-    private List<Goal> _deserializedGoal;
     private string _score;
     private string toEditGoal;
     private string _completed;
@@ -71,12 +69,13 @@ public abstract class Goal
         Console.WriteLine($"Your score is: {_score}");
     }
 
-    public abstract List<string> DeserializeGoal();
-    public abstract string SerializeGoal();
+
+    //public abstract List<string> DeserializeGoal();
+    //public abstract string SerializeGoal();
     public abstract void RecordEvent();
     public abstract string CalculateScore(int score);
 
     //public abstract Boolean CheckCompletion();
-    //public abstract void MarkCompletion();
+    public abstract void MarkCompletion();
 
 }

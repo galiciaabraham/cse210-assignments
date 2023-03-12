@@ -4,12 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> _serializedGoals = new List<string>{};
-        List<Goal> _goals = new List<Goal>{};
-        GoalFile goaltreatment = new GoalFile(_serializedGoals);
         SimpleGoal simple = new SimpleGoal();
         Menu menu = new Menu();
         Level level = new Level();
+        List<string> _serializedGoals = new List<string>();
+        GoalFile goaltreatment = new GoalFile(_serializedGoals);
+
+    
 
         int initialScore = 0;
         string initiallevel = "0";
@@ -31,34 +32,27 @@ class Program
             menu.SetGoalType(Console.ReadLine());
             if(menu.GetGoalType() == "1")
             {
+
                 simple.SetGoalType(menu.GetGoalType());
+                string goalType = simple.GetGoalType();
                 Console.Write("What is the name of your goal?");
                 simple.SetGoalName(Console.ReadLine());
+                string goalName = simple.GetGoalName();
                 Console.Write("What is a short description of it? ");
                 simple.SetGoalDescription(Console.ReadLine());
+                string goalDescription = simple.GetGoalDescription();
                 Console.Write("What are the points associated with this goal? ");
                 simple.SetGoalPoints(Console.ReadLine());
-                simple.DeserializeGoal();
-                _serializedGoals.Add(simple.SerializeGoal());
+                string goalPoints = simple.GetGoalPoints().ToString();
+                string iscomplete = simple.GetCompleted();
+                string formated = $"{iscomplete} - {goalType},{goalName},{goalDescription},{goalPoints}";
+                _serializedGoals.Add(formated);
             }   
+
         //List Goals.
         } else if (menu.GetOption() == "2")
         {
-            foreach (string line in _serializedGoals)
-            {
-                List<string> result = line.Split(",").ToList();
-                if(result[1] == "1")
-                {
-                    simple.SetGoalType(menu.GetGoalType());
-                    simple.SetGoalName(result[2]);
-                    simple.SetGoalDescription(result[3]);
-                    simple.SetGoalPoints(result[4]);
-                    List<string> simpleDeserialized = simple.DeserializeGoal();
-                    Console.WriteLine($"{simpleDeserialized[0]} {simpleDeserialized[1]}{simpleDeserialized[2]}{simpleDeserialized[3]}");
-                }
-                
-            
-            }
+            goaltreatment.ListGoals(_serializedGoals);
         // Save Goals. 
         } else if(menu.GetOption() == "3")
         {
@@ -67,7 +61,19 @@ class Program
         } else if(menu.GetOption() == "4")
         {
             _serializedGoals = goaltreatment.LoadGoals();
-        }
+        //RecordEvent.
+        } else if(menu.GetOption() == "5")
+        {
+            goaltreatment.ListGoals(_serializedGoals);
+            Console.Write("Which goal would you like to edit?");
+            int selectedIndex = Int16.Parse(Console.ReadLine());
+            if (selectedIndex == 1)
+            {
+            simple.SetSelectedGoalToEdit(_serializedGoals[selectedIndex]);
+            simple.MarkCompletion();
+            }
+        } 
+
 
         } while (menu.GetOption() != "6");
 }

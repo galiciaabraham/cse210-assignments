@@ -4,7 +4,7 @@ using System.IO;
 public class GoalFile
 {
     private string _fileName;
-    private List<string> _serializedGoals = new List<string>{};
+    private List<string> _serializedGoals = new List<string>();
 
     public GoalFile (List<string> serialized)
     {
@@ -43,5 +43,13 @@ public class GoalFile
                 _serializedGoals.Add(line);      
         }
         return _serializedGoals;
+    }
+
+    public void ListGoals(List<string> goals)
+    {
+        foreach (string item in goals)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
