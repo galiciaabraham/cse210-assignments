@@ -4,9 +4,9 @@ using System.IO;
 public class GoalFile
 {
     private string _fileName;
-    private List<string> _serializedGoals = new List<string>();
+    private List<Goal> _serializedGoals = new List<Goal>();
 
-    public GoalFile (List<string> serialized)
+    public GoalFile (List<Goal> serialized)
     {
         _serializedGoals = serialized;
     }
@@ -27,22 +27,22 @@ public class GoalFile
         {
             outputFile.WriteLine($"{level}");
             outputFile.WriteLine($"{score}");
-            foreach(string goal in _serializedGoals)
+            foreach(Goal goal in _serializedGoals)
             {
                 outputFile.WriteLine($"{goal}");
             }     
         }
     }
-    public List<string> LoadGoals()
+    public List<Goal> LoadGoals(List<Goal> serialized)
     {
         _serializedGoals.Clear();
         string[] lines = System.IO.File.ReadAllLines(_fileName);
 
         foreach(string line in lines)
-        {
-                _serializedGoals.Add(line);      
+        {      
+            serialized.Add(line);      
         }
-        return _serializedGoals;
+        return serialized;
     }
 
     public void ListGoals(List<string> goals)
