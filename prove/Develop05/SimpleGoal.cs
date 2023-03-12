@@ -17,8 +17,6 @@ public class SimpleGoal : Goal
         base.SetGoalDescription(description);
         base.SetGoalPoints(points);
     }
-
-
     public override List<string> DeserializeGoal()
     {
         _deserializedGoal.Clear();
@@ -29,8 +27,6 @@ public class SimpleGoal : Goal
         _deserializedGoal.Add(base.GetGoalPoints().ToString());        
         return _deserializedGoal;
     }
-
-
     public override string SerializeGoal()
     {
         _serializedGoal = string.Join(",",_deserializedGoal);
