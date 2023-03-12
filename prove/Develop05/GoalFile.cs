@@ -34,7 +34,19 @@ public class GoalFile
                 string name = goal.GetGoalName();
                 string description = goal.GetGoalDescription();
                 string value = goal.GetGoalPoints().ToString();
-                outputFile.WriteLine($"{type},{name},{description},{value}");
+                int objective = goal.GetObjective();
+                int bonus = goal.GetBonus();
+                if (type == "1")
+                {
+                    outputFile.WriteLine($"{type},{name},{description},{value}");
+                } else if (type == "2")
+                {
+                    outputFile.WriteLine($"{type},{name},{description},{value}");
+                } else 
+                {
+                    outputFile.WriteLine($"{type},{name},{description},{value},{objective},{bonus}");
+                }
+                
             }     
         }
     }  
@@ -50,11 +62,19 @@ public List<Goal> LoadGoals()
         string name = data[1];
         string description = data[2];
         int value = int.Parse(data[3]);
+        int objective = int.Parse(data[4]);
+        int bonus = int.Parse(data[5]);
         if (type == "1")
         {
            Goal simplegoal = new SimpleGoal(name,description,value);
            _serializedGoals.Add(simplegoal);
-        } 
+        } else if(type == "2"){
+            Goal eternalgoal = new EternalGoal(name,description,value);
+            _serializedGoals.Add(eternalgoal);
+        } else {
+            Goal checklistgoal = new CheckListGoal(name,description,value,objective,bonus);
+            _serializedGoals.Add(checklistgoal);
+        }
     }
     return _serializedGoals;
 }

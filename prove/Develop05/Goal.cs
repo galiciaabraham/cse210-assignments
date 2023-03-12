@@ -6,6 +6,8 @@ public abstract class Goal
     private string _goalDescription;
     private int _goalPoints;
     private string _score;
+    private int _objective;
+    private int _bonus;
     private string _completed = "[]";
 
     public void SetGoalType(string goalType)
@@ -55,6 +57,16 @@ public abstract class Goal
     public string GetScore()
     {
         return _score;
+    }
+
+    public int GetBonus()
+    {
+        return _bonus;
+    }
+
+
+    public int GetObjective(){
+        return _objective;
     }
     public virtual void RecordEvent(){
     }
