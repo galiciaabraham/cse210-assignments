@@ -1,0 +1,15 @@
+W11 Final Project Plan.
+Author: Abraham Galicia.
+Instructor: Brother Nathan Parrish. 
+Course: CSE 210.
+
+I am choosing "Foundation 4" as my final project for this class. 
+
+Program 1: Abstraction with YouTube Videos
+Description: It will create a reference index of videos and comments by creating lists of the objects and iterating through them to display the objects' elements.
+Program 2: Encapsulation with Online Ordering
+Description:It will create packing and shipping labels based on each order's product, customer and address by retrieving this information from each class.
+Program 3: Inheritance with Event Planning
+Description:It will generate an event marketing message by creating inherited classes that will share similar data structures but will vary from class to class. 
+Program 4: Polymorphism with Exercise Tracking
+Description: It will output a log of the activities performed by using polymorphism to deal with the same kind of data in different situations.
