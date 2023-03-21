@@ -6,14 +6,10 @@ public class Comment
     private string _name;
     private string _body;
 
-    public Comment(string date, string name)
+    public Comment(string date, string name,string body)
     {
         _date = date;
         _name = name;
-    }
-
-    public void SetBody(string body)
-    {
         _body = body;
     }
 
@@ -24,6 +20,6 @@ public class Comment
 
     public string GetComment()
     {
-        return $"{_date} - {_name}";
+        return $"{_date} - {_name} - ";
     }
 }
