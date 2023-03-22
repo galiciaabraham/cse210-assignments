@@ -13,6 +13,7 @@ public class Lecture : Event
 
     public void DisplayDetails()
     {
-        
+        base.DisplayStandard();
+        Console.WriteLine($"Speaker: {_speaker},Attendance allowed: {_capacity}");
     }
 }
