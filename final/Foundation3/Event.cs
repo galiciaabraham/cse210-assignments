@@ -22,11 +22,16 @@ public class Event
 
     public void DisplayStandard()
     {
-
+        Console.WriteLine(_eventTitle);
+        Console.WriteLine(_description);
+        Console.WriteLine(_date);
+        Console.WriteLine(_address.BuildAddress());
     }
 
     public void DisplayShort()
     {
-        
+        Console.WriteLine(_eventType);
+        Console.WriteLine(_eventTitle);
+        Console.WriteLine(_date);
     }
 }
