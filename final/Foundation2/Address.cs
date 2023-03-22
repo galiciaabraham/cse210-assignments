@@ -19,7 +19,7 @@ public class Address
 
     public string BuildAddress()
     {
-        return $"{_street}\n{_city},{_state},{_country}\n{_zipCode}";
+        return $"{_street},\n{_city},{_state},\n{_country},\n{_zipCode}";
     }
 
     public bool CheckCountry()

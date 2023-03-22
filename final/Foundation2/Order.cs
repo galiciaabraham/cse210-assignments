@@ -5,8 +5,6 @@ public class Order
     private List<Product> _productsList;
     private Customer _customer;
     private float _totalPrice;
-    private string _packingLabel;
-    private string _shippingLabel;
 
     public Order(Customer customer,List<Product> products)
     {
