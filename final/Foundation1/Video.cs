@@ -23,7 +23,7 @@ public class Video
 
     public string GetVideo()
     {
-        return $"{_title} - By {_author}, {_length} minutes, ";
+        return $"{_title} - By {_author}, {_length} seconds, ";
     }
 
     public void DisplayComments()
