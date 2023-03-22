@@ -11,6 +11,7 @@ public class Reception : Event
 
     public void DisplayDetails()
     {
-        
+        base.DisplayStandard();
+        Console.WriteLine($"Please confirm your attendance sending an email to: {_emailAddress}");
     }
 }
