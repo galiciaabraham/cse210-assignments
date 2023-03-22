@@ -5,14 +5,29 @@ public class Customer
     private string _name;
     private Address _address;
 
+    private bool _region;
+
     public Customer(string name, Address address){
     _name = name;
     _address = address;
 }
 
-    public string ReturnCustomer()
+    public string GetName()
     {
-        return $"This customer: {_name}, Lives in{_address.ReturnAddress()}";
+        return _name;
     }
 
+    public string GetAddress()
+    {
+        return _address.BuildAddress();
+    }
+
+    public bool OutsideorInside()
+    {
+        if (_address.CheckCountry()){
+            return true;
+        } else{
+            return false;
+        }
+    }
 }
