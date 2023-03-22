@@ -22,15 +22,15 @@ public class Event
 
     public void DisplayStandard()
     {
-        Console.WriteLine(_eventTitle);
-        Console.WriteLine(_description);
-        Console.WriteLine(_date);
-        Console.WriteLine(_address.BuildAddress());
+        Console.WriteLine($"Event Name: {_eventTitle}");
+        Console.WriteLine($"What's this about? {_description}");
+        Console.WriteLine($"When?: {_date}");
+        Console.WriteLine($"Where?: {_address.BuildAddress()}");
     }
 
     public void DisplayShort()
     {
-        Console.WriteLine(_eventType);
+        Console.WriteLine($"We invite you to a {_eventType}");
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_date);
     }
