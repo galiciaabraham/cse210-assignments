@@ -34,18 +34,35 @@ class Program
         outdoorsList.Add(outdoor1);
         outdoorsList.Add(outdoor2);
 
-        foreach (Event eventuallity in eventsList)
+        foreach (Lecture lecture in lecturesList)
         {
-            eventuallity.DisplayStandard();
             Console.WriteLine("--------------");
-            eventuallity.DisplayShort();
-            Console.WriteLine("-------------");
-            if(eventuallity.GetEventType() == "Lecture")
-            {
-                
-            }
+            lecture.DisplayStandard();
+            Console.WriteLine("--------------");
+            lecture.DisplayShort();
+            Console.WriteLine("--------------");
+            lecture.DisplayDetails();
        }
 
+       foreach(Reception reception in receptionsList)
+       {
+            Console.WriteLine("--------------");
+            reception.DisplayStandard();
+            Console.WriteLine("--------------");
+            reception.DisplayShort();
+            Console.WriteLine("--------------");
+            reception.DisplayDetails();
+       }
+
+        foreach(Outdoor outdoor in outdoorsList)
+       {
+            Console.WriteLine("--------------");
+            outdoor.DisplayStandard();
+            Console.WriteLine("--------------");
+            outdoor.DisplayShort();
+            Console.WriteLine("--------------");
+            outdoor.DisplayDetails();
+       }
 
     
     }
