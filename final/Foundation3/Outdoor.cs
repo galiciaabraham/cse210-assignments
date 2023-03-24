@@ -11,6 +11,7 @@ public class Outdoor : Event
 
     public void DisplayDetails()
     {
-        
+        base.DisplayStandard();
+        Console.WriteLine($"Come ready for a {_weather} day!");
     }
 }
