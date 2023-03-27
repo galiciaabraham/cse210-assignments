@@ -3,9 +3,9 @@ using System;
 public class Activity
 {
     private string _date;
-    private int _length;
-    private float _distance;
-    private float _speed;
+    protected int _length;
+    protected float _distance;
+    protected float _speed;
 
     public Activity(string date, int length, string activity)
     {
