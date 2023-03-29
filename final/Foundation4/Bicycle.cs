@@ -4,28 +4,27 @@ public class Bicycle : Activity
 {
     private float _pace;
 
-    public Bicycle(string date, int length, string activity) : base(date,length,activity)
+    public Bicycle(string date, int length, string activity, float speed) : base(date,length,activity)
     {
+        _speed = speed;
     }
 
 
     public override void DisplaySummary()
-    {        
-    }
-
-    public override float CalculateSpeed()
-    {
-        return base._speed;
+    {      
+        Console.WriteLine($"{_date} {_activity} ({_length}) - Distance {_distance}, Speed {_speed} km/h, Pace: {_pace} min per kilometer");  
     }
 
     public override float CalculatePace()
     {
-        return _pace;
+        _pace = _length / _distance;
+        return Convert.ToSingle(Math.Round(_pace,2));
     }
 
     public override float CalculateDistance()
     {
-        return base._distance;
+        _distance = (_speed * _length) / 60;
+        return Convert.ToSingle(Math.Round(_distance,2));
     }
 
     

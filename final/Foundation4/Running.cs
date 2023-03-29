@@ -25,13 +25,8 @@ public class Running : Activity
 
     public override float CalculatePace()
     {
-        return _pace;
+        _pace = _length / _distance;
+        return Convert.ToSingle(Math.Round(_pace,2));
     }
 
-    public override float CalculateDistance()
-    {
-        return base._distance;
-    }
-
-    
 }
