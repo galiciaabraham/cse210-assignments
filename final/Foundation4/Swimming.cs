@@ -12,7 +12,9 @@ public class Swimming : Activity
 
     public override void DisplaySummary()
     {      
-        Console.WriteLine($"{_date} {_activity} ({_length}) - Distance {_distance}, Speed {_speed} km/h, Laps: {_laps} min per kilometer");  
+        CalculateDistance();
+        CalculateSpeed();
+        Console.WriteLine($"{_date} {_activity} ({_length}) - Distance {_distance} km, Speed {_speed} km/h, Laps: {_laps}");  
     }
 
     public override float CalculateSpeed()
@@ -22,8 +24,10 @@ public class Swimming : Activity
     }
     public override float CalculateDistance()
     {
-        _distance = (_laps * 50) / 1000;
-        return Convert.ToSingle(Math.Round(_distance,2));
+        float distance = (_laps * 50);
+        
+        _distance = distance / 1000;
+        return _distance;
     }
     
 }

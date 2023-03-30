@@ -13,7 +13,9 @@ public class Running : Activity
 
     public override void DisplaySummary()
     {
-        Console.WriteLine($"{_date} {_activity} ({_length}) - Distance {_distance}, Speed {_speed} km/h, Pace: {_pace} min per kilometer");  
+        CalculatePace();
+        CalculateSpeed();
+        Console.WriteLine($"{_date} {_activity} ({_length}) - Distance {_distance} km, Speed {_speed} km/h, Pace: {_pace} min per kilometer");  
     }
 
     public override float CalculateSpeed()
